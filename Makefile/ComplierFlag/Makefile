@@ -1,8 +1,18 @@
 # Varibles
+DEBUG = 1
+EXECUTABLE_NAME = main
 
 CXX = g++
-CXXFLAGS = -Wall -Wextra -Wpedantic -std=c++17
-LDFLAGS = -lmath
+CXX_STANDARD = c++17
+CXX_WARNINGS = -Wall -Wextra -Wpedantic 
+CXXFLAGS = $(CXX_WARNINGS) -std=$(CXX_STANDARD)
+LDFLAGS = 
+
+ifeq ($(DEBUG), 1)
+CXXFLAGS += -g -O0
+else
+CXXFLAGS += -O3
+endif
 
 COMFILER_CALL = $(CXX) $(CXXFLAGS)
 # TARGETS
@@ -10,7 +20,7 @@ build: main.o my_lib.o
 # # 	g++ main.cc -c -o main.o 
 # 	g++ my_lib.cc -c -o my_lib.o
 # 	echo $(COMFILER_CALL)
-	$(COMFILER_CALL) main.o my_lib.o -o main
+	$(COMFILER_CALL) main.o my_lib.o $(LDFLAGS) -o $(EXECUTABLE_NAME)
 main.o:
 	$(COMFILER_CALL) main.cc -c  
 my_lib.o:
