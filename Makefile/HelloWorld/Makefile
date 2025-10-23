@@ -1,6 +1,15 @@
 # TARGETS
-build:
-	g++ main.cc -c -o main.o
-	g++ main.o -o main
+build: main.o my_lib.o
+# # 	g++ main.cc -c -o main.o 
+# 	g++ my_lib.cc -c -o my_lib.o
+	g++ main.o my_lib.o -o main
+main.o:
+	g++ main.cc -c  
+my_lib.o:
+	g++ my_lib.cc -c  
 execute:
 	./main
+
+clean:
+	rm -f main
+	rm -f *.o
