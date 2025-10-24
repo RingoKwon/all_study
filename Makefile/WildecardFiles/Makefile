@@ -32,8 +32,8 @@ execute:
 	./$(EXECUTABLE_NAME)
 
 clean:
-	rm -f main
 	rm -f *.o
+	rm -f $(EXECUTABLE_NAME)
 
 %.o: %.cc
 	$(CXX_COMFILER_CALL) -c $< -o $@
