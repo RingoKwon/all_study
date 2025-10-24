@@ -14,20 +14,31 @@ else
 CXXFLAGS += -O3
 endif
 
-COMFILER_CALL = $(CXX) $(CXXFLAGS)
+CXX_COMFILER_CALL = $(CXX) $(CXXFLAGS)
+
+CXX_SOURCE = $(wildcard *.cc)
+CXX_OBJECT = $(patsubst %.cc, %.o, $(CXX_SOURCE))
 # TARGETS
-build: main.o my_lib.o
+build: $(CXX_OBJECT) 
 # # 	g++ main.cc -c -o main.o 
 # 	g++ my_lib.cc -c -o my_lib.o
-# 	echo $(COMFILER_CALL)
-	$(COMFILER_CALL) main.o my_lib.o $(LDFLAGS) -o $(EXECUTABLE_NAME)
+# 	echo $(CXX_OBJECT)
+	$(CXX_COMFILER_CALL) $(CXX_OBJECT) $(LDFLAGS) -o $(EXECUTABLE_NAME)
 main.o:
-	$(COMFILER_CALL) main.cc -c  
+	$(CXX_COMFILER_CALL) main.cc -c  
 my_lib.o:
-	$(COMFILER_CALL) my_lib.cc -c  
+	$(CXX_COMFILER_CALL) my_lib.cc -c  
 execute:
-	./main
+	./$(EXECUTABLE_NAME)
 
 clean:
 	rm -f main
 	rm -f *.o
+
+%.o: %.cc
+	$(CXX_COMFILER_CALL) -c $< -o $@
+
+# [PATTERNS]
+# $@: the file name of the target
+# $<: the name of the first prerequisite
+# $^: the names of all prerequisites
