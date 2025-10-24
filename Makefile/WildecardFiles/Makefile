@@ -1,6 +1,5 @@
 # Varibles
 DEBUG = 1
-EXECUTABLE_NAME = main
 
 CXX = g++
 CXX_STANDARD = c++17
@@ -10,8 +9,10 @@ LDFLAGS =
 
 ifeq ($(DEBUG), 1)
 CXXFLAGS += -g -O0
+EXECUTABLE_NAME = mainDebug
 else
 CXXFLAGS += -O3
+EXECUTABLE_NAME = mainRelease
 endif
 
 CXX_COMFILER_CALL = $(CXX) $(CXXFLAGS)
