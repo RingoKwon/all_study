@@ -1,7 +1,7 @@
 # Varibles
-DEBUG = 1
-ENABLE_WARNINGS = 1
-WARNINGS_AS_ERROR = 0
+DEBUG ?= 1
+ENABLE_WARNINGS ?= 1
+WARNINGS_AS_ERROR ?= 0
 
 INCLUDE_DIR = include
 SOURCE_DIR = src
@@ -37,6 +37,7 @@ CXX_SOURCE = $(wildcard $(SOURCE_DIR)/*.cc)
 CXX_OBJECT = $(patsubst $(SOURCE_DIR)/%.cc, $(BUILD_DIR)/%.o, $(CXX_SOURCE))
 # TARGETS
 
+all: create build
 
 build: create   $(CXX_OBJECT) 
 # # 	g++ main.cc -c -o main.o 
@@ -44,7 +45,9 @@ build: create   $(CXX_OBJECT)
 # 	echo $(CXX_OBJECT)
 	$(CXX_COMFILER_CALL) $(CXX_OBJECT) $(LDFLAGS) -o $(BUILD_DIR)/$(EXECUTABLE_NAME)
 create: 
-	mkdir -p $(BUILD_DIR)
+	@mkdir -p $(BUILD_DIR) 
+# 	Add an @ before a command to stop it from being printed
+#	Each command is run in an own shell
 
 execute:
 	./$(BUILD_DIR)/$(EXECUTABLE_NAME)
