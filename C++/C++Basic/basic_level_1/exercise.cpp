@@ -1,5 +1,6 @@
 #include <iostream>
 #include <numeric>
+#include <vector>
 
 void    user()
 {
@@ -28,7 +29,7 @@ void    add()
 }
 void    avg()
 {
-    std::vector<double> arr;
+    std::vector<double> arr(4);  // Create vector with 4 elements
 
     std::cout << "Enter 1st element ";
     std::cin >> arr.at(0);
@@ -38,7 +39,7 @@ void    avg()
     std::cin >> arr.at(2);
     std::cout << "Enter 4th element ";
     std::cin >> arr.at(3);
-    std::cout << arr.at(3) <<std::endl;
+    std::cout << arr.at(3) << std::endl;
 }
 
 int main()
