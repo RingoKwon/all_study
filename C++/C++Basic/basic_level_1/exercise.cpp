@@ -29,6 +29,8 @@ void    add()
 }
 void    avg()
 {
+    int sum;
+
     std::vector<double> arr(4);  // Create vector with 4 elements
 
     std::cout << "Enter 1st element ";
@@ -39,7 +41,9 @@ void    avg()
     std::cin >> arr.at(2);
     std::cout << "Enter 4th element ";
     std::cin >> arr.at(3);
-    std::cout << arr.at(3) << std::endl;
+
+    sum = accumulate(arr.begin(), arr.end(), 0.0); 
+    std::cout << "Average is " << sum * 1.0 / arr.size() << std::endl;
 }
 
 int main()
