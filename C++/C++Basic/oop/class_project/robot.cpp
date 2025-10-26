@@ -27,6 +27,3 @@ void    Robot::print_info()
     cout << "Version number: " << version_number << endl;
     cout << "Temperature : " << internal_temperature << endl;
 }
-string name;
-int version_number;
-double  internal_temperature;
