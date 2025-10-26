@@ -34,31 +34,25 @@ int maxDynamic(vector<int> arr)
 
 int maxDynamicAllocation(vector<int> arr)
 {
-    size_t i;
-    int maxNum;
-
-    i = 0;
-    while (i < arr.size())
+    int input;
+    bool isKeepGoing = true;
+    
+    while (isKeepGoing)
     {
-        arr.at(i) = 1;
-        i++;
+        cout << "Enter an element: ";
+        cin >> input;
+        arr.push_back(input);
+        if (input == 0)
+            isKeepGoing = false;
     }
-    i = 1;
-    while (arr.at(i - 1) != 0)
-    {
-        cout << "Enter " << i + 1 << "th element: ";
-        cin >> arr.at(i);
-        i++;
-    }
-    maxNum = max(arr);
-    return maxNum;
+    return max(arr);
 }
 
 int main()
 {
     vector<int> arr = {1,2,3,4,4,4,5};
     vector<int> arrEmpty(5);
-    vector<int> arrDynamic(100);
+    vector<int> arrDynamic;
     int maxNum;
 
     maxNum = max(arr);
