@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int cnt_occur(vector<string> &arr, string str)
+int cnt_occur(const vector<string> &arr, string str)
 {
     int occur = 0;
     for (string ele: arr)
