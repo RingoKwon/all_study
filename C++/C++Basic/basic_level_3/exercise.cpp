@@ -20,11 +20,11 @@ int maxDynamic(vector<int> arr)
     int maxNum;
     int i = 0;
 
-    for (int ele: arr)
+    while (i < arr.size())
     {
         
         cout << "Enter " << i + 1 << "th Element: ";
-        cin >> ele;
+        cin >> arr[i];
         i++;
     }
     maxNum = max(arr);
@@ -37,6 +37,7 @@ int main()
     vector<int> arr = {1,2,3,4,4,4,5};
     vector<int> arrEmpty(5);
     int maxNum;
+
     maxNum = max(arr);
     cout << "max is " << maxNum << endl;
     maxDynamic(arrEmpty);

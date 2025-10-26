@@ -1,0 +1,56 @@
+=== HANDS-ON DEBUGGING SESSION ===
+
+Try this step-by-step session:
+
+SESSION 1: Debug the max() function
+------------------------------------
+1. lldb ./exercise
+2. b max                          # Set breakpoint at max function
+3. r                              # Run - it will stop at max()
+4. fr v                           # See all variables (arr, max)
+5. p arr                          # Print the array
+6. p arr.size()                   # See array size
+7. n                              # Next line (step over)
+8. p max                          # Print max value
+9. n                              # Next to the for loop
+10. n                             # Step through loop
+11. p ele                         # Print current element
+12. p max                         # Check max value
+13. c                             # Continue to next breakpoint or end
+
+SESSION 2: Step through maxDynamic bug
+---------------------------------------
+1. lldb ./exercise
+2. b maxDynamic                   # Breakpoint at line 18
+3. r
+4. fr v                           # Notice the bug? Check arr values
+5. n                              # Step through the loop
+6. p ele                          # See what happens to ele
+7. p arr                          # Check if arr is being modified
+8. finish                         # Complete function
+9. p maxNum                       # Why is it 0?
+
+SESSION 3: Examine the whole flow
+----------------------------------
+1. lldb ./exercise
+2. b main
+3. r
+4. n                              # Step line by line through main
+5. s                              # When you hit max(arr), step INTO it
+6. bt                             # See the call stack
+7. finish                         # Return to main
+8. p maxNum                       # Check the result
+9. q                              # Quit
+
+ADVANCED TIPS:
+--------------
+- Set conditional breakpoint: 
+  breakpoint set --file exercise.cpp --line 13 --condition 'ele > 3'
+
+- Print expression:
+  p/x max                         # Print in hex
+  p/t max                         # Print in binary
+
+- Examine memory:
+  memory read &max
+

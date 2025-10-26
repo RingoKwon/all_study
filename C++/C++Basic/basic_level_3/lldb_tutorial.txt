@@ -1,0 +1,55 @@
+=== LLDB TUTORIAL FOR exercise.cpp ===
+
+BASIC COMMANDS:
+---------------
+
+1. START LLDB:
+   lldb ./exercise
+
+2. SET BREAKPOINTS:
+   (lldb) breakpoint set --file exercise.cpp --line 10
+   (lldb) b exercise.cpp:10              # Short form
+   (lldb) b max                          # Break at function name
+   (lldb) b main                         # Break at main
+
+3. RUN THE PROGRAM:
+   (lldb) run                            # Start execution
+   (lldb) r                              # Short form
+
+4. STEPPING THROUGH CODE:
+   (lldb) next                           # Step over (n)
+   (lldb) step                           # Step into (s)
+   (lldb) finish                         # Step out of current function
+   (lldb) continue                       # Continue execution (c)
+
+5. INSPECTING VARIABLES:
+   (lldb) print max                      # Print variable value
+   (lldb) p max                          # Short form
+   (lldb) frame variable                 # Show all local variables
+   (lldb) fr v                           # Short form
+   (lldb) p arr                          # Print vector
+   (lldb) p arr.size()                   # Call methods
+
+6. VIEWING CODE:
+   (lldb) list                           # Show source code around current line
+   (lldb) l                              # Short form
+   (lldb) list main                      # Show code around main function
+
+7. STACK TRACE:
+   (lldb) bt                             # Backtrace (call stack)
+   (lldb) frame select 0                 # Select a frame
+
+8. BREAKPOINT MANAGEMENT:
+   (lldb) breakpoint list                # List all breakpoints
+   (lldb) br list                        # Short form
+   (lldb) breakpoint delete 1            # Delete breakpoint #1
+   (lldb) breakpoint disable 1           # Disable breakpoint #1
+
+9. WATCHPOINTS (watch variables):
+   (lldb) watchpoint set variable max    # Watch when 'max' changes
+   (lldb) watchpoint list
+
+10. EXIT:
+    (lldb) quit
+    (lldb) q
+
