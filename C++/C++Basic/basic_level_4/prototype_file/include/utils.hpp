@@ -5,4 +5,7 @@
 
 using namespace std;
 
+void num_print(int n);
+void num_triple(int  n);
+
 #endif
