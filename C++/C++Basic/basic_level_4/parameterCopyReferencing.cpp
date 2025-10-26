@@ -16,11 +16,27 @@ void    add_zeros(vector<int> arr, int  zeros_num)
     cout <<"Arr2: " << arr.size() << endl;
 }
 
+void    add_zeros_ref(vector<int> &arr, int  zeros_num)
+{
+    size_t  i;
+
+    i = 0;
+    while (i < zeros_num)
+    {
+        arr.push_back(0);
+        i++;
+    }
+    cout <<"Arr4: " << arr.size() << endl;
+}
+
 int main()
 {
     vector<int> arr = {1, 2, 3};
     cout <<"Arr1: " << arr.size() << endl;
     add_zeros(arr, 3);
     cout <<"Arr3: " << arr.size() << endl;
+    add_zeros_ref(arr, 3);
+    cout <<"Arr5: " << arr.size() << endl;
+
     return 0;
 }
