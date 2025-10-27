@@ -23,6 +23,9 @@ class RoboticArm: public Robot
 {
 public:
     RoboticArm(string name, int version_number, double reach);
+
+    void    pick_object(double x, double y);
+    void    place_object(double x, double y);
 private:
         double reach;
 };

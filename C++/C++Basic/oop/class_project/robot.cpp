@@ -34,3 +34,12 @@ RoboticArm::RoboticArm(string name, int version_number, double reach)
 
     }
 
+void    RoboticArm::pick_object(double x, double y)
+{
+    cout << "Pick object from (" << x << ", " << y << ")" << endl; 
+}
+
+void    RoboticArm::place_object(double x, double y)
+{
+    cout << "Place object at (" << x << ", " << y << ")" << endl; 
+}
