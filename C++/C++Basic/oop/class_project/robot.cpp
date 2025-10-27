@@ -27,3 +27,10 @@ void    Robot::print_info()
     cout << "Version number: " << version_number << endl;
     cout << "Temperature : " << internal_temperature << endl;
 }
+
+RoboticArm::RoboticArm(string name, int version_number, double reach)
+    :Robot(name, version_number), reach(reach)
+    {
+
+    }
+

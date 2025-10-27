@@ -19,4 +19,12 @@ private:
     double  internal_temperature;
 };
 
+class RoboticArm: public Robot
+{
+public:
+    RoboticArm(string name, int version_number, double reach);
+private:
+        double reach;
+};
+
 #endif
