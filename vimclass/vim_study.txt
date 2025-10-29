@@ -1,0 +1,68 @@
+VIM STUDY GUIDE AND PRACTICE FILE
+==================================
+
+BASIC NAVIGATION
+----------------
+h - move left
+j - move down
+k - move up
+l - move right
+
+w - move forward one word
+b - move backward one word
+e - move to end of word
+
+0 - move to beginning of line
+$ - move to end of line
+gg - move to beginning of file
+G - move to end of file
+
+MODES
+-----
+i - insert mode (before cursor)
+a - insert mode (after cursor)
+o - open new line below
+O - open new line above
+ESC - return to normal mode
+
+EDITING
+-------
+x - delete character
+dd - delete line
+yy - yank (copy) line
+p - paste after cursor
+P - paste before cursor
+u - undo
+Ctrl+r - redo
+
+SEARCH
+------
+/pattern - search forward
+?pattern - search backward
+n - next match
+N - previous match
+
+SAVE AND QUIT
+-------------
+:w - save
+:q - quit
+:wq - save and quit
+:q! - quit without saving
+
+PRACTICE TEXT BELOW
+-------------------
+This is a line you can practice editing.
+Try deleting this line with dd.
+Copy this line with yy and paste it with p.
+Navigate word by word using w and b.
+Jump to the end of this line with $.
+
+Line 1
+Line 2
+Line 3
+Line 4
+Line 5
+
+Practice deleting words, lines, and characters.
+Use visual mode with v to select text.
+Try searching for the word "practice" with /practice
