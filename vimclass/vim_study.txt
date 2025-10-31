@@ -1,4 +1,4 @@
-VIM STUDY GUIDE AND PRACTICE FILE
+
 ==================================
 
 BASIC NAVIGATION

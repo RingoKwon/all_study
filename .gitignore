@@ -1,0 +1,31 @@
+# Vim swap files
+*.swp
+*.swo
+*.swn
+
+# Compiled object files
+*.o
+*.obj
+
+# Compiled executables
+*.out
+*.exe
+a.out
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Core dumps
+core
+core.*
+
+# Editor backup files
+*~
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
