@@ -9,6 +9,15 @@ typedef struct node
 
 int main()
 {
-    Node a;
+    Node a, b, c;
+    a.value = 1;
+    b.value = 2;
+    b.value = 3;
+
+    a.next = &b;
+    b.next = &c;
+    c.next = NULL;
+
+    printf("a.value: %d", a.value);
     return (0);
 }
