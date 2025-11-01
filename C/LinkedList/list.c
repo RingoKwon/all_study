@@ -46,7 +46,7 @@ void    prt_linked_list(Node* node)
     while (current != NULL)
     {
         printf("Node %d: %d\n", i, current->value);
-        current = node->next;
+        current = current->next;
         i++;
     }
 }
