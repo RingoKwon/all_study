@@ -7,9 +7,12 @@ typedef struct node
     struct node* next;
 } Node;
 
-void prt_linked_list (Node* node)
+void prt_linked_list(Node* node)
 {
-    printf("hi");
+    printf("value: %d\n", node->value);
+    if (node->next == NULL)
+        return ;
+    prt_linked_list(node->next);
 }
 
 int main()
@@ -17,7 +20,7 @@ int main()
     Node a, b, c;
     a.value = 1;
     b.value = 2;
-    b.value = 3;
+    c.value = 3;
 
     a.next = &b;
     b.next = &c;
