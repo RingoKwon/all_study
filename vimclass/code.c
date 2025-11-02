@@ -22,8 +22,4 @@ int main(void)
 
 
 
-
-
     return (0);
-	⁃	how to 
-	⁃	how to 
