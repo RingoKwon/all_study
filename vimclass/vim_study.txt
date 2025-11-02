@@ -1,68 +1,195 @@
 
+
+
+ODES
+            D - Delete line end;
+            - undo end;
+            EARC end;
+    -
+#################################here non save #######################
+    atter - search forward
+    ?pattern - search backward
+n - ex atc
+N - reviou atc
+
+SAVE AND QUIT
+-------------
+
+PRACTICE TEXT BELOW
+:w - save
+:q - quit
+:wq - save and quit
+    :q! - quit ithou avin
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                        dd a dd you an ractice editing.
+                         Try deleting thdd dd with dd.
+                        Jump to the end hdd ine with $.
+          
+
 ==================================
 
 BASIC NAVIGATION
-----------------
-h - move left
-j - move down
-k - move up
-l - move right
 
-w - move forward one word
-b - move backward one word
-e - move to end of word
 
-0 - move to beginning of line
-$ - move to end of line
-gg - move to beginning of file
-G - move to end of file
+- h - move left
+- j - move down
+k-  - move up
+- l - move right
 
-MODES
------
-i - insert mode (before cursor)
-a - insert mode (after cursor)
+-  - move forward one word
+-  - move backward one word
+-  - move to end of word
+
+ - move to beginning of line
+ - move to end of line
+g - move to beginning of file
+ - move to end of file
+
+ODES
+----
+ - insert mode (before cursor)
+ - insert mode (after cursor)
 o - open new line below
 O - open new line above
-ESC - return to normal mode
+SC - return to normal mode
 
-EDITING
+DITING
 -------
-x - delete character
-dd - delete line
-yy - yank (copy) line
-p - paste after cursor
-P - paste before cursor
-u - undo
-Ctrl+r - redo
+- delete character
+ d - delete line
+ - yank (copy) line
+  - paste after cursor
+  - paste before cursor
+  - undo
+ rl+r - redo
+EARC
 
-SEARCH
-------
-/pattern - search forward
+atter - search forward
 ?pattern - search backward
-n - next match
-N - previous match
+n - ex atc
+N - reviou atc
 
 SAVE AND QUIT
 -------------
 :w - save
 :q - quit
 :wq - save and quit
-:q! - quit without saving
+    :q! - quit ithou avin
 
 PRACTICE TEXT BELOW
 -------------------
-This is a line you can practice editing.
+ is a line you an ractice editing.
 Try deleting this line with dd.
-Copy this line with yy and paste it with p.
-Navigate word by word using w and b.
-Jump to the end of this line with $.
+Jump to the end of his ine with $.
 
-Line 1
-Line 2
-Line 3
+ 1 "what a cool"
+Line 2 "what a cool" "what a cool" "what a cool" "what a cool"
+Line 3 "what a cool" "what a cool"
 Line 4
-Line 5
+ 5
 
-Practice deleting words, lines, and characters.
-Use visual mode with v to select text.
-Try searching for the word "practice" with /practice
+ deleting words, lines, and characters.
+  mode with v to select text.
+er 
+@
+k"
+"  /practice
+
+z
+
+viws
+
+viws
+
+==================================
+
+BASIC NAVIGATION
+
+
+- h - move left
+- j - move down
+k-  - move up
+- l - move right
+
+-  - move forward one word
+-  - move backward one word
+-  - move to end of word
+
+ - move to beginning of line
+ - move to end of line
+g - move to beginning of file
+ - move to end of file
+
+ODES
+----
+ - insert mode (before cursor)
+ - insert mode (after cursor)
+o - open new line below
+O - open new line above
+SC - return to normal mode
+
+DITING
+-------
+- delete character
+ d - delete line
+ - yank (copy) line
+  - paste after cursor
+  - paste before cursor
+  - undo
+ trl+r - redo
+EARC
+
+atter - search forward
+?pattern - search backward
+n - ex atc
+N - reviou atc
+
+SAVE AND QUIT
+-------------
+:w - save
+:q - quit
+:wq - save and quit
+    :q! - quit ithou avin
+
+PRACTICE TEXT BELOW
+-------------------
+ is a lineyou an ractice editing.
+Try deleting this line with dd.
+Jump to the end of his ine with $.
+
+ 1 "what a cool"
+Line 2 "what a cool" "what a cool" "what a cool" "what a cool"
+Line 3 "what a cool" "what a cool"
+Line 4
+ 5
+
+ deleting words, lines, and characters.
+  mode with v to select text.
+er 
+@
+k"
+"  /practice
+
+z
+
+viws
+
+viws
+1 "what a cool"
+Line 2 "what a cool" "what a cool" "what a cool" "what a cool"
+Line 3 "what a cool" "what a cool"
+Line 4
+5
+
+ deleting words, lines, and characters.
+  mode with v to select text.
+er 
+@
+k"
+"  /practice
+
+z
+
+viws
+
+viws
