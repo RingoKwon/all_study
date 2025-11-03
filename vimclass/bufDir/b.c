@@ -15,6 +15,7 @@ int numSelectWhere(int num)
 
 int main(void)
 {
+    numSelectWhere(4);
     numSelectWhere(3);
     return;
 }
