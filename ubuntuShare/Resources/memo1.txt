@@ -1,0 +1,28 @@
+  4. Once stopped at the breakpoint, inspect the array:
+
+    - Print the array address:
+    (gdb) print &a
+    - Print array contents:
+    (gdb) print a
+    - Examine memory as 10 decimal words:
+    (gdb) x/10dw &a
+    - Examine memory as 40 bytes in hexadecimal:
+    (gdb) x/40xb &a
+    - View the stack frame information:
+    (gdb) info frame
+    - View stack pointer and array location:
+    (gdb) print $sp
+  (gdb) print (void*)&a - (void*)$sp
+
+  Memory examination format:
+
+  The x command syntax is: x/[count][format][size] address
+  - count: number of units to display
+  - format: d (decimal), x (hex), t (binary), s (string), i
+  (instruction)
+  - size: b (byte), h (halfword), w (word), g (giant/8 bytes)
+
+  This will show you exactly where a[10] is located on the
+  stack and its contents!
+
+
