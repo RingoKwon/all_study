@@ -7,33 +7,28 @@ typedef struct node
     struct node* next;
 } Node;
 
-void    prt_linked_list_recursive(Node* node);
 void    prt_linked_list(Node* node);
+Node*   add_head(Node* head, int value);
 
 int main()
 {
-    Node a, b, c;
-    a.value = 1;
-    b.value = 2;
-    c.value = 3;
+    Node*    list1_head;
 
-    a.next = &b;
-    b.next = &c;
-    c.next = NULL;
-
-    printf("recursive: \n");
-    prt_linked_list_recursive(&a);
-    printf("iterative: \n");
-    prt_linked_list(&a);
+    list1_head = NULL;
+    add_head(list1_head, 3);
     return (0);
 }
 
-void    prt_linked_list_recursive(Node* node)
+Node*   add_head(Node* head, int value)
 {
-    printf("value: %d\n", node->value);
-    if (node->next == NULL)
-        return ;
-    prt_linked_list_recursive(node->next);
+    Node* new_head;
+
+    new_head = calloc(1, sizeof(Node));
+    new_head->value = value;
+    if (head == NULL)
+        return (new_head);
+    new_head->next = head;
+    return (new_head);
 }
 
 void    prt_linked_list(Node* node)
