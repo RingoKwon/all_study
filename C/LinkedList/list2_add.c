@@ -9,6 +9,7 @@ typedef struct node
 
 void    prt_linked_list(Node* node);
 Node*   add_head(Node* head, int value);
+Node*   add_tail(Node* tail, int value);
 
 int main()
 {
@@ -31,6 +32,15 @@ Node*   add_head(Node* head, int value)
         return (new_head);
     new_head->next = head;
     return (new_head);
+}
+
+Node*   add_tail(Node* head, int value)
+{
+    Node* tail;
+
+
+    tail = calloc(1, sizeof(Node));
+    return ();
 }
 
 void    prt_linked_list(Node* node)
