@@ -15,7 +15,9 @@ int main()
     Node*    list1_head;
 
     list1_head = NULL;
-    add_head(list1_head, 3);
+    list1_head = add_head(list1_head, 1);
+    list1_head = add_head(list1_head, 2);
+    prt_linked_list(list1_head);
     return (0);
 }
 
