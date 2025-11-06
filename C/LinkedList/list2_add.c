@@ -10,6 +10,7 @@ typedef struct node
 void    prt_linked_list(Node* node);
 Node*   add_head(Node* head, int value);
 Node*   add_tail(Node* tail, int value);
+Node*   delete_head(Node* head);
 
 int main()
 {
@@ -21,7 +22,19 @@ int main()
     list1_head = add_tail(list1_head, 0);
     list1_head = add_tail(list1_head, 100);
     prt_linked_list(list1_head);
+    delete_head(list1_head);
+    prt_linked_list(list1_head);
     return (0);
+}
+
+Node*   delete_head(Node* head)
+{
+    Node*   current;
+    if (head == NULL)
+        return (NULL);
+    current = head->next;
+    free(head);
+    return (current);
 }
 
 Node*   add_head(Node* head, int value)
