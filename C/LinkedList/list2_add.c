@@ -19,6 +19,7 @@ int main()
     list1_head = add_head(list1_head, 1);
     list1_head = add_head(list1_head, 2);
     list1_head = add_tail(list1_head, 0);
+    list1_head = add_tail(list1_head, 100);
     prt_linked_list(list1_head);
     return (0);
 }
@@ -40,12 +41,17 @@ Node*   add_tail(Node* head, int value)
     Node* tail;
     Node* current; 
 
+    tail = calloc(1, sizeof(Node));
+    tail->value = value;
+
+    if (head == NULL)
+        return (tail);
+
     current = head;
     while (current->next != NULL)
     {
         current = current->next;
     }
-    tail = calloc(1, sizeof(Node));
     current->next = tail;
     return (head);
 }
