@@ -54,7 +54,7 @@ Node*   delete_tail(Node* head)
     while (current != NULL)
     {
         previous = current;
-        current = head->next;
+        current = current->next;
     }
     previous->next = NULL;
     free(current);
