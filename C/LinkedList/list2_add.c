@@ -22,7 +22,7 @@ int main()
     list1_head = add_tail(list1_head, 0);
     list1_head = add_tail(list1_head, 100);
     prt_linked_list(list1_head);
-    delete_head(list1_head);
+    list1_head = delete_head(list1_head);
     prt_linked_list(list1_head);
     return (0);
 }
