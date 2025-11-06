@@ -49,8 +49,13 @@ Node*   delete_tail(Node* head)
     Node* previous;
 
     current = head;
-    if (head == NULL || head->next == NULL)
+    if (head == NULL)
         return (NULL);
+    if (head->next == NULL)
+    {
+        free(head);
+        return (NULL);
+    }
     while (current->next != NULL)
     {
         previous = current;
