@@ -41,7 +41,7 @@ Node*   add_tail(Node* head, int value)
     Node* current; 
 
     current = head;
-    while (current->next == NULL)
+    while (current->next != NULL)
     {
         current = current->next;
     }
