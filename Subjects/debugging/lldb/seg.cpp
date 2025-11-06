@@ -2,8 +2,9 @@
 
 void    func2()
 {
-    int* px = nullptr;
+    int* px = new int;
     *px = 7;
+    delete px;
 }
 
 void    func1()
