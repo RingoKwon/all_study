@@ -11,6 +11,7 @@ void    prt_linked_list(Node* node);
 Node*   add_head(Node* head, int value);
 Node*   add_tail(Node* tail, int value);
 Node*   delete_head(Node* head);
+Node*   delete_tail(Node* head);
 
 int main()
 {
@@ -22,8 +23,13 @@ int main()
     list1_head = add_tail(list1_head, 0);
     list1_head = add_tail(list1_head, 100);
     prt_linked_list(list1_head);
+    printf("\n");
     list1_head = delete_head(list1_head);
     prt_linked_list(list1_head);
+    printf("\n");
+    list1_head = delete_tail(list1_head);
+    prt_linked_list(list1_head);
+
     return (0);
 }
 
@@ -35,6 +41,25 @@ Node*   delete_head(Node* head)
     current = head->next;
     free(head);
     return (current);
+}
+
+Node*   delete_tail(Node* head)
+{
+    Node* current;
+    Node* previous;
+
+    current = head;
+    if (head == NULL)
+        return (head);
+    while (current != NULL)
+    {
+        previous = current;
+        current = head->next;
+    }
+    previous->next = NULL;
+    free(current);
+
+    return (head);
 }
 
 Node*   add_head(Node* head, int value)
