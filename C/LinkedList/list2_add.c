@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct node 
 {
@@ -14,6 +15,7 @@ Node*   delete_head(Node* head);
 Node*   delete_tail(Node* head);
 int length(Node* head);
 int length_recursive(Node* head);
+bool    search_reculsive(Node* head, int num);
 
 int main()
 {
@@ -36,8 +38,8 @@ int main()
     // length
     printf("Length :%d\n", length(list1_head));
     printf("Length :%d\n", length_recursive(list1_head));
-
     printf("-----------------\n");
+    printf("have 2: %d", search_reculsive(list1_head, 1));
 
     return (0);
 }
@@ -128,6 +130,18 @@ int length_recursive(Node* head)
     if (head == NULL)
         return (0);
     return (1 + length_recursive(head->next));
+}
+
+bool    search_reculsive(Node* head, int num)
+{
+    if (head == NULL)
+        return (false);
+    if (head->value == num)
+    {
+        return (true);
+    }
+    search_reculsive(head->next, num);
+    return (false);
 }
 
 void    prt_linked_list(Node* node)
