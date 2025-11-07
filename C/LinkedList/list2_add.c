@@ -16,6 +16,7 @@ Node*   delete_tail(Node* head);
 int length(Node* head);
 int length_recursive(Node* head);
 bool    is_member(Node* head, int num);
+int count_member(Node* head, int num);
 
 int main()
 {
@@ -23,6 +24,9 @@ int main()
 
     list1_head = NULL;
     list1_head = add_head(list1_head, 1);
+    list1_head = add_head(list1_head, 2);
+    list1_head = add_head(list1_head, 2);
+    list1_head = add_head(list1_head, 2);
     list1_head = add_head(list1_head, 2);
     list1_head = add_tail(list1_head, 0);
     list1_head = add_tail(list1_head, 100);
@@ -36,10 +40,13 @@ int main()
     list1_head = delete_tail(list1_head);
     prt_linked_list(list1_head);
     // length
+    printf("-----------------\n");
     printf("Length :%d\n", length(list1_head));
     printf("Length :%d\n", length_recursive(list1_head));
     printf("-----------------\n");
-    printf("have 2: %d", is_member(list1_head, 2));
+    printf("have 2: %d\n", is_member(list1_head, 2));
+    printf("-----------------\n");
+    printf("count: %d", count_member(list1_head, 2));
 
     return (0);
 }
@@ -141,6 +148,16 @@ bool    is_member(Node* head, int num)
         return (true);
     }
     return (is_member(head->next, num));
+}
+
+int count_member(Node* head, int num)
+{
+    if (head->next == NULL)
+        return (0);
+    if (head->value == num)
+        return (1 + count_member(head->next, num));
+    else
+        return (0 + count_member(head->next, num));
 }
 
 void    prt_linked_list(Node* node)
