@@ -13,6 +13,7 @@ Node*   add_tail(Node* tail, int value);
 Node*   delete_head(Node* head);
 Node*   delete_tail(Node* head);
 int length(Node* head);
+int length_recursive(Node* head);
 
 int main()
 {
@@ -34,6 +35,8 @@ int main()
     prt_linked_list(list1_head);
     // length
     printf("Length :%d\n", length(list1_head));
+    printf("Length :%d\n", length_recursive(list1_head));
+
     printf("-----------------\n");
 
     return (0);
@@ -118,6 +121,13 @@ int length(Node* head)
         i++;
     }
     return (i);
+}
+
+int length_recursive(Node* head)
+{
+    if (head == NULL)
+        return (0);
+    return (1 + length_recursive(head->next));
 }
 
 void    prt_linked_list(Node* node)
