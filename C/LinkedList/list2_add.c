@@ -15,7 +15,7 @@ Node*   delete_head(Node* head);
 Node*   delete_tail(Node* head);
 int length(Node* head);
 int length_recursive(Node* head);
-bool    search_reculsive(Node* head, int num);
+bool    is_member(Node* head, int num);
 
 int main()
 {
@@ -39,7 +39,7 @@ int main()
     printf("Length :%d\n", length(list1_head));
     printf("Length :%d\n", length_recursive(list1_head));
     printf("-----------------\n");
-    printf("have 2: %d", search_reculsive(list1_head, 1));
+    printf("have 2: %d", is_member(list1_head, 2));
 
     return (0);
 }
@@ -132,7 +132,7 @@ int length_recursive(Node* head)
     return (1 + length_recursive(head->next));
 }
 
-bool    search_reculsive(Node* head, int num)
+bool    is_member(Node* head, int num)
 {
     if (head == NULL)
         return (false);
@@ -140,8 +140,7 @@ bool    search_reculsive(Node* head, int num)
     {
         return (true);
     }
-    search_reculsive(head->next, num);
-    return (false);
+    return (is_member(head->next, num));
 }
 
 void    prt_linked_list(Node* node)
