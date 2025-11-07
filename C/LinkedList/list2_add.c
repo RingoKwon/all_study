@@ -16,7 +16,7 @@ Node*   delete_tail(Node* head);
 int length(Node* head);
 int length_recursive(Node* head);
 bool    is_member(Node* head, int num);
-int count_member(Node* head, int num);
+int count_matches(Node* head, int num);
 
 int main()
 {
@@ -46,7 +46,7 @@ int main()
     printf("-----------------\n");
     printf("have 2: %d\n", is_member(list1_head, 2));
     printf("-----------------\n");
-    printf("count: %d", count_member(list1_head, 2));
+    printf("count: %d", count_matches(list1_head, 2));
 
     return (0);
 }
@@ -150,14 +150,14 @@ bool    is_member(Node* head, int num)
     return (is_member(head->next, num));
 }
 
-int count_member(Node* head, int num)
+int count_matches(Node* head, int num)
 {
     if (head->next == NULL)
         return (0);
     if (head->value == num)
-        return (1 + count_member(head->next, num));
+        return (1 + count_matches(head->next, num));
     else
-        return (0 + count_member(head->next, num));
+        return (0 + count_matches(head->next, num));
 }
 
 void    prt_linked_list(Node* node)
