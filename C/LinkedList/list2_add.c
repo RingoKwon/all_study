@@ -17,6 +17,7 @@ int length(Node* head);
 int length_recursive(Node* head);
 bool    is_member(Node* head, int num);
 int count_matches(Node* head, int num);
+void    replace_matches(Node* node, int from, int to);
 
 int main()
 {
@@ -46,7 +47,10 @@ int main()
     printf("-----------------\n");
     printf("have 2: %d\n", is_member(list1_head, 2));
     printf("-----------------\n");
-    printf("count: %d", count_matches(list1_head, 2));
+    printf("count: %d\n", count_matches(list1_head, 2));
+    printf("-----------------\n");
+    replace_matches( list1_head, 2, 2000);
+    prt_linked_list(list1_head);
 
     return (0);
 }
@@ -173,4 +177,17 @@ void    prt_linked_list(Node* node)
         current = current->next;
         i++;
     }
+}
+
+void    replace_matches(Node* node, int from, int to)
+{
+    if (node == NULL)
+        return ;
+    if (node->next == NULL)
+        return ;
+    if (node->value == from)
+    {
+        node->value = to;
+    }
+    replace_matches(node->next, from, to);
 }
