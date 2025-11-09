@@ -194,14 +194,15 @@ void    replace_matches(Node* node, int from, int to)
 
 Node*   delete_first_match(Node* head, int first_match, bool* is_deleted)
 {
-    Node* current = head->next;
-    Node* previous = head;
-
     if (head == NULL)
     {
         *is_deleted = false;
         return (NULL);
     }
+
+    Node* current = head->next;
+    Node* previous = head;
+
     if (head->value == first_match)
     {
         current = head->next;
@@ -232,11 +233,12 @@ Node*   delete_all_match(Node* head, int match, int* count)
 
     current = head;
     is_deleted = false;
-    *count = -1;
+    *count = 0;
     do
     {
         current = delete_first_match(current, match, &is_deleted);
-        (*count)++;
+        if (is_deleted)
+            (*count)++;
     }
     while (is_deleted);
     return (current);
