@@ -19,10 +19,12 @@ bool    is_member(Node* head, int num);
 int count_matches(Node* head, int num);
 void    replace_matches(Node* node, int from, int to);
 Node*   delete_first_match(Node* head, int first_match, bool* is_deleted);
+Node*   delete_all_match(Node* head, int match, int* count);
 
 int main()
 {
     Node*    list1_head;
+    int cnt;
 
     list1_head = NULL;
     list1_head = add_head(list1_head, 1);
@@ -47,6 +49,9 @@ int main()
     list1_head = delete_first_match(list1_head, 7, &is_deleted);
     prt_linked_list(list1_head);
     printf("is_deleted: %d\n", is_deleted);
+    list1_head = delete_all_match(list1_head, 7, &cnt);
+    prt_linked_list(list1_head);
+    printf("cnt: %d", cnt);
     return (0);
 }
 
@@ -220,7 +225,19 @@ Node*   delete_first_match(Node* head, int first_match, bool* is_deleted)
     return (head);
 }
 
-Node*   delete_all_match(Node* head, int match, bool* is_deleted)
+Node*   delete_all_match(Node* head, int match, int* count)
 {
-    
+    Node* current;
+    bool   is_deleted;
+
+    current = head;
+    is_deleted = false;
+    *count = -1;
+    do
+    {
+        current = delete_first_match(current, match, &is_deleted);
+        (*count)++;
+    }
+    while (is_deleted);
+    return (current);
 }
