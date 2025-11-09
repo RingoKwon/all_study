@@ -26,31 +26,14 @@ int main()
     list1_head = NULL;
     list1_head = add_head(list1_head, 1);
     list1_head = add_head(list1_head, 2);
-    list1_head = add_head(list1_head, 2);
-    list1_head = add_head(list1_head, 2);
-    list1_head = add_head(list1_head, 2);
-    list1_head = add_tail(list1_head, 0);
-    list1_head = add_tail(list1_head, 100);
+    list1_head = add_head(list1_head, 3);
+    list1_head = add_head(list1_head, 4);
+    list1_head = add_head(list1_head, 4);
+    list1_head = add_tail(list1_head, 5);
+    list1_head = add_tail(list1_head,100);
     prt_linked_list(list1_head);
     printf("Length :%d\n", length(list1_head));
     printf("-----------------\n");
-    list1_head = delete_head(list1_head);
-    prt_linked_list(list1_head);
-    printf("Length :%d\n", length(list1_head));
-    printf("-----------------\n");
-    list1_head = delete_tail(list1_head);
-    prt_linked_list(list1_head);
-    // length
-    printf("-----------------\n");
-    printf("Length :%d\n", length(list1_head));
-    printf("Length :%d\n", length_recursive(list1_head));
-    printf("-----------------\n");
-    printf("have 2: %d\n", is_member(list1_head, 2));
-    printf("-----------------\n");
-    printf("count: %d\n", count_matches(list1_head, 2));
-    printf("-----------------\n");
-    replace_matches( list1_head, 2, 2000);
-    prt_linked_list(list1_head);
 
     return (0);
 }
@@ -190,4 +173,33 @@ void    replace_matches(Node* node, int from, int to)
         node->value = to;
     }
     replace_matches(node->next, from, to);
+}
+
+Node* delete_first_match(Node* head, first_match num, bool* is_deleted)
+{
+    Node* current;
+    Node* previous;
+
+    if (head == NULL)
+    {
+        is_deleted = false;
+        return (NULL);
+    }
+    if (head.value == first_match)
+    {
+        free(head);
+        is_deleted = true;
+        return (head->value);
+    }
+    while (current != NULL)
+    {
+        if (current.value == first_match)
+        {
+            previous->next = current;
+            is_deleted = ture;
+        }
+        previous = current;
+        current = current->next;
+    }
+    
 }
