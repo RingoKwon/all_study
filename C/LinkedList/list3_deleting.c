@@ -273,11 +273,11 @@ Node* efficient_delete_match(Node* head, int delete_value, int* delete_count)
     }
     current = new_head->next;
     previous = new_head;
-    while (current != NULL)
+    while (current->next != NULL)
     {
-        if (current->value == delete_value)
+        if (new_head->value == delete_value)
         {
-            while (current->value == delete_value)
+            while (current->value == delete_value && current->next != NULL)
             {
                 previous->next = current->next;
                 temp = current;
