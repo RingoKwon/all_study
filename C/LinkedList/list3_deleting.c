@@ -36,10 +36,10 @@ int main()
     list1_head = add_head(list1_head, 4);
     list1_head = add_head(list1_head, 4);
     list1_head = add_tail(list1_head, 6);
+    list1_head = add_tail(list1_head, 4);
     list1_head = add_tail(list1_head, 7);
-    list1_head = add_tail(list1_head, 7);
-    list1_head = add_tail(list1_head, 7);
-    list1_head = add_tail(list1_head, 7);
+    list1_head = add_tail(list1_head, 3);
+    list1_head = add_tail(list1_head, 3);
     list1_head = add_tail(list1_head, 7);
     printf("-----print list-----\n");
     prt_linked_list(list1_head);
