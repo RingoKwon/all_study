@@ -21,40 +21,34 @@ void    replace_matches(Node* node, int from, int to);
 Node*   delete_first_match(Node* head, int first_match, bool* is_deleted);
 Node*   delete_all_match(Node* head, int match, int* count);
 Node* efficient_delete_match(Node* head, int delete_value, int* delete_count);
+Node*   append(Node* head1, Node* head2);
 
 int main()
 {
     Node*    list1_head;
+    Node*    list2_head;
     int cnt;
 
     list1_head = NULL;
+    list2_head = NULL;
     list1_head = add_head(list1_head, 1);
     list1_head = add_head(list1_head, 2);
     list1_head = add_tail(list1_head, 3);
     list1_head = add_tail(list1_head, 3);
     list1_head = add_tail(list1_head, 7);
 
-    list2_head = add_head(list1_head, 1);
-    list2_head = add_head(list1_head, 2);
-    list2_head = add_tail(list1_head, 3);
-    list2_head = add_tail(list1_head, 3);
-    list2_head = add_tail(list1_head, 7);
+    list2_head = add_head(list2_head, 10);
+    list2_head = add_head(list2_head, 20);
+    list2_head = add_tail(list2_head, 30);
+    list2_head = add_tail(list2_head, 30);
+    list2_head = add_tail(list2_head, 70);
     
-    printf("-----print list-----\n");
+    printf("-----print list1-----\n");
     prt_linked_list(list1_head);
-    printf("[delete_first_match]\n");
-    bool is_deleted;
-    list1_head = delete_first_match(list1_head, 5, &is_deleted); 
-    prt_linked_list(list1_head);
-    printf("is_deleted: %d\n", is_deleted);
-    printf("-------------------------\n");
-    list1_head = delete_first_match(list1_head, 7, &is_deleted);
-    prt_linked_list(list1_head);
-    printf("is_deleted: %d\n", is_deleted);
-    list1_head = delete_all_match(list1_head, 7, &cnt);
-    prt_linked_list(list1_head);
-    printf("cnt: %d\n", cnt);
-    list1_head = efficient_delete_match(list1_head, 3, &cnt);
+    printf("-----print list2-----\n");
+    prt_linked_list(list2_head);
+    printf("-----print append-----\n");
+    append(list1_head, list2_head);
     prt_linked_list(list1_head);
     return (0);
 }
@@ -281,4 +275,16 @@ Node* efficient_delete_match(Node* head, int delete_value, int* delete_count)
             current = current->next;
     }
     return (new_head);
+}
+Node*   append(Node* head1, Node* head2)
+{
+    if (head1 == NULL)
+        return (head2);
+    Node* current = head1;
+    while (current->next != NULL)
+    {
+        current = current->next;
+    }
+    current->next = head2;
+    return (head1);
 }
