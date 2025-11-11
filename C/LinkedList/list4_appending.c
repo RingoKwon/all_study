@@ -312,6 +312,7 @@ Node* reverse_list(Node* head)
         current = current_next;
         current_next = current->next;
     }
-    return (new_head);
+    current_next->next = new_head;
+    return (current_next);
 }
  
