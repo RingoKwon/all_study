@@ -23,6 +23,7 @@ Node*   delete_all_match(Node* head, int match, int* count);
 Node*   efficient_delete_match(Node* head, int delete_value, int* delete_count);
 Node*   append(Node* head1, Node* head2);
 Node*   reverse_list(Node* head);
+void    sort_list(Node* head);
 
 int main()
 {
@@ -52,6 +53,9 @@ int main()
     prt_linked_list(list1_head);
     printf("-----print reverse-----\n");
     list1_head = reverse_list(list1_head);
+    prt_linked_list(list1_head);
+    printf("-----print sort-----\n");
+    sort_list(list1_head);
     prt_linked_list(list1_head);
     return (0);
 }
@@ -313,4 +317,32 @@ Node* reverse_list(Node* head)
         current_next = temp;
     }
     return (current);
+}
+
+void    sort_list(Node* head)
+{
+    Node* current;
+    int temp;
+    int len;
+    int i;
+
+    if (head == NULL)
+        return ;
+    len = length(head);
+    i = 0;
+    while (i < len)
+    {
+        current = head;
+        while (current->next != NULL)
+        {
+            if (current->value > current->next->value)
+            {
+                temp = current->value;
+                current->value = current->next->value;
+                current->next->value = temp;
+            }
+            current = current->next;
+        }
+        i++;
+    }
 }
