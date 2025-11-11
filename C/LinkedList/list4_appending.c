@@ -296,21 +296,21 @@ Node* reverse_list(Node* head)
 {
     Node*   current;
     Node*   current_next;
-    Node*   previous;
+    Node*   temp;
 
     if (head == NULL)
         return (NULL);
-    previous = NULL;
-    current = head;
+    if (head->next == NULL)
+        return (head);
+    current = NULL;
     current_next = head->next;
-    while (current->next != NULL)
+    while (current != NULL)
     {
-        current->next = previous;
-        previous = current;
+        temp = current_next->next;
+        current_next->next = current;
         current = current_next;
-        current_next = current->next;
+        current_next = temp;
     }
-    current->next = previous;
     return (current);
 }
  
