@@ -302,9 +302,10 @@ Node* reverse_list(Node* head)
         return (NULL);
     if (head->next == NULL)
         return (head);
-    current = NULL;
+    current = head;
     current_next = head->next;
-    while (current != NULL)
+    current->next = NULL;
+    while (current_next != NULL)
     {
         temp = current_next->next;
         current_next->next = current;
@@ -313,4 +314,3 @@ Node* reverse_list(Node* head)
     }
     return (current);
 }
- 
