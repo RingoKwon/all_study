@@ -297,7 +297,6 @@ Node* reverse_list(Node* head)
     Node*   current;
     Node*   current_next;
     Node*   previous;
-    Node*   new_head;
 
     if (head == NULL)
         return (NULL);
@@ -308,11 +307,10 @@ Node* reverse_list(Node* head)
     {
         current->next = previous;
         previous = current;
-        new_head = current;
         current = current_next;
         current_next = current->next;
     }
-    current_next->next = new_head;
-    return (current_next);
+    current->next = previous;
+    return (current);
 }
  
