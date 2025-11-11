@@ -20,14 +20,14 @@ int count_matches(Node* head, int num);
 void    replace_matches(Node* node, int from, int to);
 Node*   delete_first_match(Node* head, int first_match, bool* is_deleted);
 Node*   delete_all_match(Node* head, int match, int* count);
-Node* efficient_delete_match(Node* head, int delete_value, int* delete_count);
+Node*   efficient_delete_match(Node* head, int delete_value, int* delete_count);
 Node*   append(Node* head1, Node* head2);
+Node*   reverse_list(Node* head);
 
 int main()
 {
     Node*    list1_head;
     Node*    list2_head;
-    int cnt;
 
     list1_head = NULL;
     list2_head = NULL;
@@ -49,6 +49,9 @@ int main()
     prt_linked_list(list2_head);
     printf("-----print append-----\n");
     append(list1_head, list2_head);
+    prt_linked_list(list1_head);
+    printf("-----print reverse-----\n");
+    list1_head = reverse_list(list1_head);
     prt_linked_list(list1_head);
     return (0);
 }
@@ -288,3 +291,25 @@ Node*   append(Node* head1, Node* head2)
     current->next = head2;
     return (head1);
 }
+
+Node* reverse_list(Node* head)
+{
+    Node*   current;
+    Node*   current_next;
+    Node*   previous;
+
+    if (head == NULL)
+        return (NULL);
+    previous = NULL;
+    current = head;
+    current_next = head->next;
+    while (current->next->next != NULL)
+    {
+        current->next = previous;
+        previous = current;
+        current = current_next;
+        current_next = current->next;
+    }
+    return (current);
+}
+ 
