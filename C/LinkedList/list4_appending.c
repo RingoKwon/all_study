@@ -24,6 +24,7 @@ Node*   efficient_delete_match(Node* head, int delete_value, int* delete_count);
 Node*   append(Node* head1, Node* head2);
 Node*   reverse_list(Node* head);
 void    sort_list(Node* head);
+void    sort_list_solution(Node* head);
 
 int main()
 {
@@ -55,7 +56,7 @@ int main()
     list1_head = reverse_list(list1_head);
     prt_linked_list(list1_head);
     printf("-----print sort-----\n");
-    sort_list(list1_head);
+    sort_list_solution(list1_head);
     prt_linked_list(list1_head);
     return (0);
 }
@@ -328,6 +329,8 @@ void    sort_list(Node* head)
 
     if (head == NULL)
         return ;
+    if (head->next == NULL)
+        return ;
     len = length(head);
     i = 0;
     while (i < len)
@@ -345,4 +348,33 @@ void    sort_list(Node* head)
         }
         i++;
     }
+}
+
+void    sort_list_solution(Node* head)
+{
+    bool    is_deleted;
+    int     temp;
+    Node*   current;
+
+    if (head == NULL)
+        return ;
+    if (head->next == NULL)
+        return ;
+    do
+    {
+        is_deleted = false;
+        current = head;
+        while (current->next != NULL)
+        {
+            if (current->value > current->next->value)
+            {
+                temp = current->value;
+                current->value = current->next->value;
+                current->next->value = temp;
+                is_deleted = true;
+            }
+            current = current->next;
+        }
+    }
+    while (is_deleted);
 }
