@@ -390,14 +390,14 @@ void    delete_duplicates(Node* head)
     int     count;
 
     outter_current = head;
-    inner_current = head;
+    inner_current = head->next;
     while (outter_current->next != NULL)
     {
         while (inner_current->next != NULL)
         {
             if (inner_current->value == outter_current->value)
             {
-                delete_all_match(inner_current, inner_current->value, &count);
+                outter_current = delete_all_match(inner_current, inner_current->value, &count);
             }
             inner_current = inner_current->next;
         }
