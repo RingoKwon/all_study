@@ -25,6 +25,7 @@ Node*   append(Node* head1, Node* head2);
 Node*   reverse_list(Node* head);
 void    sort_list(Node* head);
 void    sort_list_solution(Node* head);
+void    delete_duplicates(Node* head);
 
 int main()
 {
@@ -57,6 +58,9 @@ int main()
     prt_linked_list(list1_head);
     printf("-----print sort-----\n");
     sort_list_solution(list1_head);
+    prt_linked_list(list1_head);
+    printf("-----print no duplicates-----\n");
+    delete_duplicates(list1_head);
     prt_linked_list(list1_head);
     return (0);
 }
@@ -352,7 +356,7 @@ void    sort_list(Node* head)
 
 void    sort_list_solution(Node* head)
 {
-    bool    is_deleted;
+    bool    swaped;
     int     temp;
     Node*   current;
 
@@ -362,7 +366,7 @@ void    sort_list_solution(Node* head)
         return ;
     do
     {
-        is_deleted = false;
+        swaped = false;
         current = head;
         while (current->next != NULL)
         {
@@ -371,10 +375,32 @@ void    sort_list_solution(Node* head)
                 temp = current->value;
                 current->value = current->next->value;
                 current->next->value = temp;
-                is_deleted = true;
+                swaped = true;
             }
             current = current->next;
         }
     }
-    while (is_deleted);
+    while (swaped);
+}
+
+void    delete_duplicates(Node* head)
+{
+    Node*   inner_current;
+    Node*   outter_current;
+    int     count;
+
+    outter_current = head;
+    inner_current = head;
+    while (outter_current->next != NULL)
+    {
+        while (inner_current->next != NULL)
+        {
+            if (inner_current->value == outter_current->value)
+            {
+                delete_all_match(inner_current, inner_current->value, &count);
+            }
+            inner_current = inner_current->next;
+        }
+        outter_current = outter_current->next;
+    }
 }
