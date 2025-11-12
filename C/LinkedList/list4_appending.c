@@ -385,22 +385,25 @@ void    sort_list_solution(Node* head)
 
 void    delete_duplicates(Node* head)
 {
-    Node*   inner_current;
-    Node*   outter_current;
-    int     count;
+    Node*   outter_node;
+    Node*   inner_node;
 
-    outter_current = head;
-    inner_current = head->next;
-    while (outter_current->next != NULL)
+    outter_node = head;
+    inner_node = head->next;
+    if (head == NULL)
+        return ;
+    if (head->next == NULL)
+        return ;
+    while (outter_node->next != NULL)
     {
-        while (inner_current->next != NULL)
+        while (inner_node->next->next != NULL)//will it be completed? do while needed?
         {
-            if (inner_current->value == outter_current->value)
+            if (outter_node->value == inner_node->value)
             {
-                outter_current = delete_all_match(inner_current, inner_current->value, &count);
+                inner_node->next = inner_node->next->next;
             }
-            inner_current = inner_current->next;
+            inner_node = inner_node->next; 
         }
-        outter_current = outter_current->next;
+        outter_node = outter_node->next;
     }
 }
