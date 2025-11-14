@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 void swap(int* a1, int* a2, int index){
     int tmp = a1[index];
     a1[index] = a2[index];
