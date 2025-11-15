@@ -2,13 +2,14 @@
 #include <string.h>
 #include <stdlib.h>
 
-void    string_exited(char* str, int len)
+void    string_exited(const char* str, int len)
 {
     char* new_str;
 
     new_str = strndup(str, len + 1);
     new_str[len] = '!';
     printf("%s\n", new_str);
+    //free(new_str);
 }
 
 int main()
