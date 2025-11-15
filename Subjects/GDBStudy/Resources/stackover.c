@@ -2,10 +2,14 @@
 
 #include <stdio.h>
 
+void    counter(int n)
+{
+    printf("%d\n", n);
+    return (counter(1 + n));
+}
+
 int main()
 {
-    int array[100000000000];
-        array[ 99999999999] = 7;
-    printf("%d\n", array[99999999999]) ;
+    counter(0);
     return (0);
 }   
