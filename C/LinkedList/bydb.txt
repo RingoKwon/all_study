@@ -1,0 +1,4 @@
+break list4_appending.c:388
+watch inner_node->value
+watch outter_node->value
+watch temp->value

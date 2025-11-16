@@ -387,6 +387,7 @@ void    delete_duplicates(Node* head)
 {
     Node*   outter_node;
     Node*   inner_node;
+    Node*   temp;
 
     outter_node = head;
     inner_node = head->next;
@@ -396,14 +397,17 @@ void    delete_duplicates(Node* head)
         return ;
     while (outter_node->next != NULL)
     {
-        while (inner_node->next->next != NULL)//will it be completed? do while needed?
+        while (inner_node->next!= NULL)//will it be completed? do while needed?
         {
             if (outter_node->value == inner_node->value)
             {
+                temp = inner_node->next;
                 inner_node->next = inner_node->next->next;
+                free(temp);
             }
             inner_node = inner_node->next; 
         }
         outter_node = outter_node->next;
+        inner_node = outter_node->next;
     }
 }
