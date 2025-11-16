@@ -32,9 +32,12 @@ int main()
 {
     Node*    list1_head;
     Node*    list2_head;
+    Node*    list3_head;
 
     list1_head = NULL;
     list2_head = NULL;
+    list3_head = NULL;
+
     list1_head = add_head(list1_head, 1);
     list1_head = add_head(list1_head, 2);
     list1_head = add_tail(list1_head, 3);
@@ -46,7 +49,13 @@ int main()
     list2_head = add_tail(list2_head, 30);
     list2_head = add_tail(list2_head, 30);
     list2_head = add_tail(list2_head, 70);
-    
+   
+
+    list3_head = add_tail(list3_head, 1);
+    list3_head = add_tail(list3_head, 1);
+    list3_head = add_tail(list3_head, 2);
+    list3_head = add_tail(list3_head, 2);
+
     printf("-----print list1-----\n");
     prt_linked_list(list1_head);
     printf("-----print list2-----\n");
@@ -63,6 +72,9 @@ int main()
     printf("-----print no duplicates-----\n");
     delete_duplicates(list1_head);
     prt_linked_list(list1_head);
+    printf("-----print no duplicates2-----\n");
+    delete_duplicates(list3_head);
+    prt_linked_list(list3_head);
     return (0);
 }
 
@@ -398,7 +410,37 @@ void    delete_duplicates(Node* head)
         return ;
     while (outter_node->next != NULL)
     {
-        while (inner_node->next!= NULL)
+        while (inner_node->next!= NULL )
+        {
+            if (outter_node->value == inner_node->next->value)
+            {
+                temp = inner_node->next;
+                inner_node->next = inner_node->next->next;
+                free(temp);
+            }
+            inner_node = inner_node->next; 
+        }
+        outter_node = outter_node->next;
+        inner_node = outter_node;
+    }
+}
+
+
+void    delete_duplicates2(Node* head)
+{
+    Node*   outter_node;
+    Node*   inner_node;
+    Node*   temp;
+
+    outter_node = head;
+    inner_node = head;
+    if (head == NULL)
+        return ;
+    if (head->next == NULL)
+        return ;
+    while (outter_node->next != NULL)
+    {
+        while (inner_node->next!= NULL )
         {
             if (outter_node->value == inner_node->next->value)
             {
