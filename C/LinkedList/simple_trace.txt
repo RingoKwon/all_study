@@ -1,0 +1,61 @@
+SIMPLE TRACE OF delete_duplicates2
+List: 1 -> 2 -> 2 -> NULL
+
+=== OUTER LOOP ITERATION 1 ===
+Line 443: outter_node->next != NULL? (1->next = 2, so YES)
+
+  outter_node = 1
+  inner_node_previous = 1
+  inner_node_current = 2 (first)
+
+  === INNER LOOP ===
+  Check: 1 == 2? NO
+  Advance: inner_node_previous = 2 (first)
+           inner_node_current = 2 (second)
+
+  Check: 1 == 2? NO
+  Advance: inner_node_previous = 2 (second)
+           inner_node_current = NULL
+
+  Exit inner loop (inner_node_current == NULL)
+
+Line 459: outter_node = outter_node->next = 2 (first)
+Line 460: inner_node_previous = 2 (first)
+Line 461: inner_node_current = 2 (second)
+
+=== OUTER LOOP ITERATION 2 ===
+Line 443: outter_node->next != NULL? (first_2->next = second_2, so YES)
+
+  outter_node = 2 (first)
+  inner_node_previous = 2 (first)
+  inner_node_current = 2 (second)
+
+  === INNER LOOP ===
+  Check: 2 == 2? YES! DELETE!
+
+  Line 449: inner_node_previous->next = inner_node_current->next
+            first_2->next = NULL
+
+  Line 450: free(inner_node_current)
+            FREE second 2
+
+  Line 451: inner_node_current = NULL
+
+  List now: 1 -> 2 -> NULL
+
+  Exit inner loop (inner_node_current == NULL)
+
+Line 459: outter_node = outter_node->next
+          = first_2->next
+          = NULL  ← outter_node is NOW NULL!
+
+Line 460: inner_node_previous = NULL
+
+Line 461: inner_node_current = NULL->next  ← TRYING TO USE NULL!
+          CRASH!
+
+=== THE BUG ===
+After freeing the duplicate, outter_node->next became NULL
+Then we set outter_node = NULL
+Then we try to use NULL->next
+CRASH!
