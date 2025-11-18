@@ -484,7 +484,16 @@ void    delete_duplicates_solution(Node* head)
     outter_node = head;
     while (outter_node != NULL && outter_node->next != NULL)
     {
-        printf("dd\n");
+        inner_node = outter_node;
+        while (inner_node->next != NULL)
+        {
+            if (outter_node->value == inner_node->)
+            {
+                
+            }
+            else
+                inner_node = inner_node->next;
+        }
         outter_node = outter_node->next;
     }
 }
