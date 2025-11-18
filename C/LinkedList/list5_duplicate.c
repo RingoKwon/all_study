@@ -458,7 +458,9 @@ void    delete_duplicates2(Node* head)
         }
         outter_node = outter_node->next;
         if (outter_node != NULL)
+        {
             inner_node_current = outter_node->next;
             inner_node_previous = outter_node;
+        }
     }
 }
