@@ -35,14 +35,12 @@ int main()
     Node*   list1_head;
     Node*   list2_head;
     Node*   list3_head;
-    Node*   null_next;
+    Node*   list4_head;
 
     list1_head = NULL;
     list2_head = NULL;
     list3_head = NULL;
-    null_next = NULL;
-
-    null_next = add_head(null_next, 1);
+    list4_head = NULL;
 
     list1_head = add_head(list1_head, 1);
     list1_head = add_head(list1_head, 2);
@@ -61,6 +59,11 @@ int main()
     list3_head = add_tail(list3_head, 1);
     list3_head = add_tail(list3_head, 2);
     list3_head = add_tail(list3_head, 2);
+
+    list4_head = add_tail(list4_head, 2);
+    list4_head = add_tail(list4_head, 2);
+    list4_head = add_tail(list4_head, 4);
+    list4_head = add_tail(list4_head, 4);
 
     printf("-----print list1-----\n");
     prt_linked_list(list1_head);
@@ -81,11 +84,11 @@ int main()
     printf("-----print no duplicates2-----\n");
     delete_duplicates2(list3_head);
     prt_linked_list(list3_head);
-    printf("-----print no duplicates sulution-----\n");
-    prt_linked_list(list3_head);
-    delete_duplicates_solution(null_next);
-    printf("------------------------------\n");
-    prt_linked_list(null_next);
+    printf("-----print no duplicates solution-----\n");
+    prt_linked_list(list4_head);
+    printf("========================\n");
+    delete_duplicates_solution(list4_head);
+    prt_linked_list(list4_head);
     return (0);
 }
 
@@ -487,9 +490,10 @@ void    delete_duplicates_solution(Node* head)
         inner_node = outter_node;
         while (inner_node->next != NULL)
         {
-            if (outter_node->value == inner_node->)
+            if (outter_node->value == inner_node->next->value)
             {
-                
+                duplicate = inner_node->next;
+                inner_node->next = inner_node->next->next;
             }
             else
                 inner_node = inner_node->next;
