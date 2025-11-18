@@ -28,16 +28,21 @@ void    sort_list(Node* head);
 void    sort_list_solution(Node* head);
 void    delete_duplicates(Node* head);
 void    delete_duplicates2(Node* head);
+void    delete_duplicates_solution(Node* head);
 
 int main()
 {
-    Node*    list1_head;
-    Node*    list2_head;
-    Node*    list3_head;
+    Node*   list1_head;
+    Node*   list2_head;
+    Node*   list3_head;
+    Node*   null_next;
 
     list1_head = NULL;
     list2_head = NULL;
     list3_head = NULL;
+    null_next = NULL;
+
+    null_next = add_head(null_next, 1);
 
     list1_head = add_head(list1_head, 1);
     list1_head = add_head(list1_head, 2);
@@ -76,6 +81,11 @@ int main()
     printf("-----print no duplicates2-----\n");
     delete_duplicates2(list3_head);
     prt_linked_list(list3_head);
+    printf("-----print no duplicates sulution-----\n");
+    prt_linked_list(list3_head);
+    delete_duplicates_solution(null_next);
+    printf("------------------------------\n");
+    prt_linked_list(null_next);
     return (0);
 }
 
@@ -462,5 +472,19 @@ void    delete_duplicates2(Node* head)
             inner_node_current = outter_node->next;
             inner_node_previous = outter_node;
         }
+    }
+}
+
+void    delete_duplicates_solution(Node* head)
+{
+    Node*   inner_node;
+    Node*   outter_node;
+    Node*   duplicate;
+
+    outter_node = head;
+    while (outter_node != NULL && outter_node->next != NULL)
+    {
+        printf("dd\n");
+        outter_node = outter_node->next;
     }
 }
