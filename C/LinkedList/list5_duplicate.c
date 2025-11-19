@@ -29,6 +29,7 @@ void    sort_list_solution(Node* head);
 void    delete_duplicates(Node* head);
 void    delete_duplicates2(Node* head);
 void    delete_duplicates_solution(Node* head);
+Node*   insert_after(Node* head, int num_af, int num_val);
 
 int main()
 {
@@ -89,6 +90,11 @@ int main()
     printf("========================\n");
     delete_duplicates_solution(list4_head);
     prt_linked_list(list4_head);
+    printf("-----print insert after-----\n");
+    prt_linked_list(list2_head);
+    printf("----------------------\n");
+    insert_after(list2_head, 10, 100);
+    
     return (0);
 }
 
@@ -500,4 +506,19 @@ void    delete_duplicates_solution(Node* head)
         }
         outter_node = outter_node->next;
     }
+}
+
+Node*   insert_after(Node* head, int num_af, int num_val)
+{
+    Node*   current;
+
+    if (head == NULL)
+        return (head);
+    current = head;
+    while (current->next != NULL)
+    {
+        printf("%d\n", current->value);
+        current = current->next;
+    }
+    printf("%d\n", current->value);
 }
