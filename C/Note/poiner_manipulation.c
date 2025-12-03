@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void pointer_arithmeris_exercise()
+void pointer_arithmetic_exercise()
 {
     int arr[5] = {1, 10, 100, 1000, 10000};
     int *p = arr;
@@ -23,6 +23,8 @@ void pointer_arithmeris_exercise()
 int main() {
     pointer_arithmeris_exercise();
     /*
+    Expected output (example):
+
     Before p++ ---------------------
     arr[0] (same as p[0]): 1
     p (address of arr[0]): 0x...
@@ -36,9 +38,12 @@ int main() {
     p[1] (now arr[2]): 100
     *(p + 1) (also arr[2]): 100
     --------------------------------
-    Conclusion:
-    - p + 1 not change p address, it just change the value of p, same as p[1] not like p++ that change the address
-    - p++ change p address, it just change the value of p, same as p[1] not like p + 1
+    Key points:
+    - 'p' is a pointer to int. Initially, 'p = arr' so it points to arr[0].
+    - 'p[i]' is exactly the same as '*(p + i)'.
+    - 'p + 1' does NOT change 'p'; it creates a new pointer value one element after 'p'.
+      (You only move 'p' if you assign: 'p = p + 1;' or use 'p++'.)
+    - 'p++' DOES change 'p': after 'p++', 'p' points to the next element in the array.
     */
 
     return 0;
