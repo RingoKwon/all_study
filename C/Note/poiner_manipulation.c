@@ -21,7 +21,6 @@ void pointer_arithmetic_exercise()
 }
 
 int main() {
-    pointer_arithmeris_exercise();
     /*
     Expected output (example):
 
