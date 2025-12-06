@@ -3,45 +3,50 @@
 
 int main(void)
 {
-    // Note: We cast to (void *) for %p because:
-    // 1. The C standard requires %p to receive a void* argument
-    // 2. While char* might work on many systems, it's technically undefined behavior
-    // 3. void* is the generic pointer type that can represent any pointer type
-    // 4. This ensures portability and correctness across all platforms
-    // Two strings (string literals)
-    char *st1 = "abc";
-    char *st2 = "xyz";
+    // Variable declarations (as shown in diagram)
+    char **s_arr;
+    char *str1;
+    char *str2;
 
-    // Array of char* (this is the double-pointer level)
-    char **s_arr = malloc(sizeof(char *) * 3);
+    // String literals: str1 = {'a','b','c'}, str2 = {'A','B','C'}
+    str1 = "abc";
+    str2 = "ABC";
+
+    // Allocate array of char* pointers (double pointer level)
+    s_arr = malloc(sizeof(char *) * 2);
     if (!s_arr)
         return 1;
 
-    // Store the string pointers inside the array
-    s_arr[0] = st1;
-    s_arr[1] = st2;
-    s_arr[2] = NULL;   // optional end marker
+    // Store string pointers in array: s_arr[0] = str1, s_arr[1] = str2
+    s_arr[0] = str1;
+    s_arr[1] = str2;
 
-    printf("=== Basic pointers ===\n");
-    printf("st1         = %p -> \"%s\"\n", (void *)st1, st1);
-    printf("st2         = %p -> \"%s\"\n", (void *)st2, st2);
-
-    printf("\n=== s_arr (double pointer level) ===\n");
+    // [**] Double Pointer Level - Array of Pointers
+    printf("=== Double Pointer Level (s_arr) ===\n");
     printf("s_arr       = %p\n", (void *)s_arr);
     printf("&s_arr[0]   = %p  (s_arr == &s_arr[0])\n", (void *)&s_arr[0]);
+    
+    // Pointer arithmetic: s_arr[i] = *(s_arr + i)
+    printf("\ns_arr[0]       = %p  (same as *(s_arr + 0))\n", (void *)s_arr[0]);
+    printf("*(s_arr + 0)   = %p  (s_arr[i] = *(s_arr + i))\n", (void *)*(s_arr + 0));
+    printf("&s_arr[1]      = %p  (same as s_arr + 1)\n", (void *)&s_arr[1]);
+    printf("s_arr + 1      = %p  (&s_arr[i] = s_arr + i)\n", (void *)(s_arr + 1));
 
-    printf("\n=== s_arr[0] and pointer arithmetic ===\n");
-    printf("s_arr[0]        = %p -> \"%s\"\n", (void *)s_arr[0], s_arr[0]);
-    printf("*(s_arr + 0)    = %p -> \"%s\"\n", (void *)*(s_arr + 0), *(s_arr + 0));
-    printf("*s_arr          = %p -> \"%s\"\n", (void *)*s_arr, *s_arr);
+    // [*] Single Pointer Level - String Data
+    printf("\n=== Single Pointer Level (str1) ===\n");
+    printf("str1        = %p -> \"%s\"\n", (void *)str1, str1);
+    printf("str1 + 0    = %p -> '%c'  (points to 'a')\n", (void *)(str1 + 0), *(str1 + 0));
+    printf("str1 + 1    = %p -> '%c'  (points to 'b')\n", (void *)(str1 + 1), *(str1 + 1));
+    printf("str1 + 2    = %p -> '%c'  (points to 'c')\n", (void *)(str1 + 2), *(str1 + 2));
+    printf("str1 + 3    = %p -> '\\0'  (null terminator)\n", (void *)(str1 + 3));
 
-    printf("\n=== Dereferencing values ===\n");
-    printf("s_arr[0][0]     = '%c'\n", s_arr[0][0]);   // first character of st1
-    printf("**s_arr         = '%c'\n", **s_arr);       // same as above
+    printf("\nstr2        = %p -> \"%s\"\n", (void *)str2, str2);
 
-    printf("\n=== Indexing example ===\n");
-    printf("s_arr[1]        = %p -> \"%s\"\n", (void *)s_arr[1], s_arr[1]);
-    printf("s_arr[1][2]     = '%c'\n", s_arr[1][2]);   // 'z'
+    // Dereferencing: *s_arr[0] and **s_arr
+    printf("\n=== Dereferencing ===\n");
+    printf("s_arr[0]    = %p -> \"%s\"\n", (void *)s_arr[0], s_arr[0]);
+    printf("*s_arr[0]   = '%c'  (first char of str1)\n", *s_arr[0]);
+    printf("**s_arr     = '%c'  (same as *s_arr[0])\n", **s_arr);
 
     free(s_arr);
     return 0;
@@ -50,27 +55,26 @@ int main(void)
 /*
  * EXPECTED OUTPUT:
  * ================
- * === Basic pointers ===
- * st1         = 0x10248c6c8 -> "abc"
- * st2         = 0x10248c6cc -> "xyz"
+ * === Double Pointer Level (s_arr) ===
+ * s_arr       = 0x...  (address of array)
+ * &s_arr[0]   = 0x...  (s_arr == &s_arr[0])
  *
- * === s_arr (double pointer level) ===
- * s_arr       = 0xba4c00900
- * &s_arr[0]   = 0xba4c00900  (s_arr == &s_arr[0])
+ * s_arr[0]       = 0x...  (same as *(s_arr + 0))
+ * *(s_arr + 0)   = 0x...  (s_arr[i] = *(s_arr + i))
+ * &s_arr[1]      = 0x...  (same as s_arr + 1)
+ * s_arr + 1      = 0x...  (&s_arr[i] = s_arr + i)
  *
- * === s_arr[0] and pointer arithmetic ===
- * s_arr[0]        = 0x10248c6c8 -> "abc"
- * *(s_arr + 0)    = 0x10248c6c8 -> "abc"
- * *s_arr          = 0x10248c6c8 -> "abc"
+ * === Single Pointer Level (str1) ===
+ * str1        = 0x... -> "abc"
+ * str1 + 0    = 0x... -> 'a'  (points to 'a')
+ * str1 + 1    = 0x... -> 'b'  (points to 'b')
+ * str1 + 2    = 0x... -> 'c'  (points to 'c')
+ * str1 + 3    = 0x... -> '\0'  (null terminator)
  *
- * === Dereferencing values ===
- * s_arr[0][0]     = 'a'
- * **s_arr         = 'a'
+ * str2        = 0x... -> "ABC"
  *
- * === Indexing example ===
- * s_arr[1]        = 0x10248c6cc -> "xyz"
- * s_arr[1][2]     = 'z'
- *
- * Note: Memory addresses will vary between runs, but the string values
- *       and character values shown above will remain consistent.
+ * === Dereferencing ===
+ * s_arr[0]    = 0x... -> "abc"
+ * *s_arr[0]   = 'a'  (first char of str1)
+ * **s_arr     = 'a'  (same as *s_arr[0])
  */
