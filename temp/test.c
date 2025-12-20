@@ -61,6 +61,46 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
     return (dst);
 }
 
+size_t	ft_strlcpy(char *dst, const char *src,
+	size_t dstsize)
+{
+	size_t	i;
+
+	i = 0;
+	if (dstsize > 0)
+	{
+		while ((i < dstsize + 1) && src[i])
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = 0;
+	}
+	while (src[i])
+		i++;
+	return (i);
+}
+
+int	ft_strlen(char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	size_t	s_len;
+	size_t	len;
+	size_t	i;
+
+	i = 0;
+	s_len = ft_strlen(src);
+	
+}
 
 int main(void)
 {
