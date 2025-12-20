@@ -17,6 +17,51 @@ void    *ft_memset(void *b, int c, size_t len)
     return (b);
 }
 
+void   *ft_memcpy(void *dst, const void *src, size_t n)
+{
+    unsigned char          *dst_char;
+    const unsigned char    *src_char;
+    size_t                 i;
+
+    dst_char = (unsigned char *)dst;
+    src_char = (const unsigned char *)src;
+    i = 0;
+    while (i < n)
+    {
+        dst_char[i] = src_char[i];
+        i++;
+    }
+    return (dst);
+}
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+    unsigned char		*dst_char;
+    const unsigned char	*src_char;
+
+    /* if len is zero, nothing to do — allow NULL pointers in that case */
+    if (len == 0)
+        return (dst);
+    if (!dst || !src)
+        return (NULL);
+    dst_char = (unsigned char *)dst;
+    src_char = (const unsigned char *)src;
+    if (dst_char > src_char)
+    {
+        dst_char += len;
+        src_char += len;
+        while (len--)
+            *(--dst_char) = *(--src_char);
+    }
+    else
+    {
+        while (len--)
+            *(dst_char++) = *(src_char++);
+    }
+    return (dst);
+}
+
+
 int main(void)
 {
     char    *c1;
