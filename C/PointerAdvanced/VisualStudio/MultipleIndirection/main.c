@@ -30,7 +30,9 @@ int main(int argc, char **argv) {
 		printf("item pointed to by pi is %d\n", *pi);
 		printf("item pointed to by ppi is %p\n", *ppi);
 		printf("item pointed to by double indirection of ppi is %d\n\n", **ppi);
-		printf("The address of pi is %p and the value of ppi (what it points to) is %p\n\n", &pi, ppi);
+		printf("The address of pi is %p and the value of ppi (what it points to) is %p\n", &pi, ppi);
+		printf("The value of pi is %p and it points to %d \n\n", pi, *pi);
+		printf("--------------\n");
 
 		pi += 1;		// advance the pointer to point to the next element of the data array
 	}
