@@ -1,7 +1,7 @@
-export default function Home() {
+export default function Dashboard() {
   return (
     <div className="flex min-h-screen items-center justify-center">
-      <h1 className="text-4xl font-bold">Landing Page</h1>
+      <h1 className="text-4xl font-bold">Dashboard</h1>
     </div>
   );
 }
