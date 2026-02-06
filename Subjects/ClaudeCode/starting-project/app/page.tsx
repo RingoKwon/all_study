@@ -1,4 +1,10 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Home() {
+  const [count, setCount] = useState(0);
+
   return (
     <div className="flex min-h-screen items-center justify-center">
       <div className="max-w-2xl px-6">
@@ -11,6 +17,12 @@ export default function Home() {
           <li>Context-aware coding — Claude understands your entire codebase and makes consistent changes across files</li>
           <li>Rapid iteration — describe what you want in plain language and see working code immediately</li>
         </ol>
+        <button
+          onClick={() => setCount(count + 1)}
+          className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg text-lg font-semibold hover:bg-blue-700 active:bg-blue-800 transition-colors"
+        >
+          Clicked: {count}
+        </button>
       </div>
     </div>
   );
