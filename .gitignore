@@ -26,6 +26,13 @@ core.*
 *~
 *.bak
 
+# Web project artifacts
+node_modules/
+dist/
+build/
+.next/
+.env
+
 # OS files
 .DS_Store
 Thumbs.db
