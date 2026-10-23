@@ -150,9 +150,9 @@
   3. `@/components/Card`의 `@`는 어디를 가리키고, 어느 파일에 정의돼 있나?
   4. 라이브 수정: `public`에 이미지 하나 넣고 브라우저 주소로 바로 열기
 
-- [ ] **L1** What You'll Learn, What You'll Build and Setting Up! (7분) [시청] 미션: 터미널에서 `node -v` 실행해 버전 확인, VS Code 설치 확인. 주의: Next 16은 Node 20.9 이상 필요
-- [ ] **L2** Creating a Next.js Project (8분) [실습] 미션: (완료) my-app이 이미 Next 16, TypeScript, Tailwind v4, App Router로 생성됨. 할 일은 `cd my-app` 후 `npm run dev`만. 확인: http://localhost:3000 에 Next.js 기본 화면. 서버 종료는 Ctrl+C. 규칙: R12, R13. 커밋 #7d4b5c9
-- [ ] **L3** Next.js Project Structure (9분) [시청] 미션: `npm run dev` 켠 상태로 http://localhost:3000/next.svg 접속해서 public 파일이 보이는지 확인. package.json 열어서 scripts 4개(dev, build, start, lint) 이름을 말해보기. 규칙: R5, R12
+- [x] **L1** What You'll Learn, What You'll Build and Setting Up! (7분) [시청] 미션: 터미널에서 `node -v` 실행해 버전 확인, VS Code 설치 확인. 주의: Next 16은 Node 20.9 이상 필요
+- [x] **L2** Creating a Next.js Project (8분) [실습] 미션: (완료) my-app이 이미 Next 16, TypeScript, Tailwind v4, App Router로 생성됨. 할 일은 `cd my-app` 후 `npm run dev`만. 확인: http://localhost:3000 에 Next.js 기본 화면. 서버 종료는 Ctrl+C. 규칙: R12, R13. 커밋 #7d4b5c9
+- [x] **L3** Next.js Project Structure (9분) [시청] 미션: `npm run dev` 켠 상태로 http://localhost:3000/next.svg 접속해서 public 파일이 보이는지 확인. package.json 열어서 scripts 4개(dev, build, start, lint) 이름을 말해보기. 규칙: R5, R12
 
 ### 단계 1. React 기초 (L4~13, 약 1시간 50분)
 
@@ -166,16 +166,16 @@
   3. 목록 렌더링에서 key는 왜 필요하고, 배열 index를 key로 쓰면 언제 문제가 되나?
   4. 라이브 수정: Card에 `highlight` prop을 추가해 true면 테두리 색을 바꾸기
 
-- [ ] **L4** Section Introduction: React 101 (1분) [시청] 미션: 확인 질문: "React와 Next.js의 관계를 한 줄로 말하면?" (React는 화면 부품 라이브러리, Next.js는 그걸 웹사이트로 만드는 프레임워크)
-- [ ] **L5** What is React? (5분) [시청] 미션: 확인 질문: "컴포넌트란?" "선언형이란?" 을 한 줄로 설명해보기
-- [ ] **L6** Understanding JSX Syntax (8분) [실습] 미션: app/page.js 의 return 안을 지우고 `<div className="p-20 bg-gray-800">Hello, {name}</div>` 만들기(name 변수는 함수 위에 선언). 일부러 태그를 안 닫아서 에러 화면도 한 번 보기. 확인: localhost:3000 에 "Hello, 이름" 이 보임. 저장하면 새로고침 없이 바로 반영(Fast Refresh). 규칙: R13 (기본 템플릿 page.tsx의 이미지와 링크 코드는 지우고 시작). 커밋 #04224b4
-- [ ] **L7** Components as the Basic UI Building Blocks (6분) [실습] 미션: `function Card(props)` 를 만들어 `<div className="border rounded-md border-gray-600 p-4">{props.text}</div>` 를 돌려주게 하고, Home 안에서 `<Card text="..." />` 를 3번 쓰기. 확인: 테두리 박스 3개가 서로 다른 문구로 보임. 규칙: R5. 커밋 #787a58f
-- [ ] **L8** Component Props (Passing Data to Components) (4분) [실습] 미션: Card가 `{children}` 을 받도록 바꾸고 `<Card>안녕</Card>` 형태로 쓰기. Card 안에 Card를 넣어보기. 확인: 중첩된 테두리 박스 안에 글자가 보임. 커밋 #10ebbb0
-- [ ] **L9** Responding to Events (6분) [실습] 미션: 버튼을 만들고 클릭 시 alert("Hello") 뜨게 하기. 에러 메시지가 나면 첫 줄에 "use client" 추가. 함수 이름만 넘기는 것과 괄호 붙이는 것의 차이도 시도. 확인: 버튼 클릭하면 알림창, F12 콘솔에 이벤트 객체 출력. 커밋 #2bc6172
-- [ ] **L10** Keeping Component State using Hooks (useState) (8분) [실습] 미션: `let label = "show"` 로 먼저 해보고 클릭해도 안 바뀌는 것을 확인한 뒤 `const [label, setLabel] = useState("show")` 로 고치기. useState는 react에서 import. 확인: 버튼을 누를 때마다 글자가 show와 hide로 바뀜. 커밋 #6706582
-- [ ] **L11** Conditional Rendering (5분) [먼저] 미션: isVisible 상태를 만들어 버튼 클릭 시 카드들이 사라졌다 나타나게 하기. 확인: 버튼 글자가 Hide/Show로 바뀌고 카드 목록이 토글됨. 커밋 #c52c000
-- [ ] **L12** Rendering List of Elements (6분) [먼저] 미션: `["Piotr","John","Terry"]` 이름 배열을 map으로 출력하고, Add 버튼으로 항목 추가. 확인: 카드가 3장 나오고 Add 누를 때마다 "New element" 카드가 늘어남. 콘솔에 key 경고가 없어야 함. 커밋 #031781b
-- [ ] **L13** Importing and Exporting Components (4분) [실습] 미션: 프로젝트 루트에 components 폴더 만들고 Card.js 로 옮겨서 export default 붙이기. 상대경로(`../components/Card`)와 `@/components/Card` 두 방식 모두 해보기. 확인: 화면이 이동 전과 동일하게 보임. 규칙: R13 (my-app은 TS라 `@/*` 별칭이 tsconfig.json에 이미 있음. `@/components/Card` 그대로 사용 가능). 커밋 #4541f98
+- [x] **L4** Section Introduction: React 101 (1분) [시청] 미션: 확인 질문: "React와 Next.js의 관계를 한 줄로 말하면?" (React는 화면 부품 라이브러리, Next.js는 그걸 웹사이트로 만드는 프레임워크)
+- [x] **L5** What is React? (5분) [시청] 미션: 확인 질문: "컴포넌트란?" "선언형이란?" 을 한 줄로 설명해보기
+- [x] **L6** Understanding JSX Syntax (8분) [실습] 미션: app/page.js 의 return 안을 지우고 `<div className="p-20 bg-gray-800">Hello, {name}</div>` 만들기(name 변수는 함수 위에 선언). 일부러 태그를 안 닫아서 에러 화면도 한 번 보기. 확인: localhost:3000 에 "Hello, 이름" 이 보임. 저장하면 새로고침 없이 바로 반영(Fast Refresh). 규칙: R13 (기본 템플릿 page.tsx의 이미지와 링크 코드는 지우고 시작). 커밋 #04224b4
+- [x] **L7** Components as the Basic UI Building Blocks (6분) [실습] 미션: `function Card(props)` 를 만들어 `<div className="border rounded-md border-gray-600 p-4">{props.text}</div>` 를 돌려주게 하고, Home 안에서 `<Card text="..." />` 를 3번 쓰기. 확인: 테두리 박스 3개가 서로 다른 문구로 보임. 규칙: R5. 커밋 #787a58f
+- [x] **L8** Component Props (Passing Data to Components) (4분) [실습] 미션: Card가 `{children}` 을 받도록 바꾸고 `<Card>안녕</Card>` 형태로 쓰기. Card 안에 Card를 넣어보기. 확인: 중첩된 테두리 박스 안에 글자가 보임. 커밋 #10ebbb0
+- [x] **L9** Responding to Events (6분) [실습] 미션: 버튼을 만들고 클릭 시 alert("Hello") 뜨게 하기. 에러 메시지가 나면 첫 줄에 "use client" 추가. 함수 이름만 넘기는 것과 괄호 붙이는 것의 차이도 시도. 확인: 버튼 클릭하면 알림창, F12 콘솔에 이벤트 객체 출력. 커밋 #2bc6172
+- [x] **L10** Keeping Component State using Hooks (useState) (8분) [실습] 미션: `let label = "show"` 로 먼저 해보고 클릭해도 안 바뀌는 것을 확인한 뒤 `const [label, setLabel] = useState("show")` 로 고치기. useState는 react에서 import. 확인: 버튼을 누를 때마다 글자가 show와 hide로 바뀜. 커밋 #6706582
+- [x] **L11** Conditional Rendering (5분) [먼저] 미션: isVisible 상태를 만들어 버튼 클릭 시 카드들이 사라졌다 나타나게 하기. 확인: 버튼 글자가 Hide/Show로 바뀌고 카드 목록이 토글됨. 커밋 #c52c000
+- [x] **L12** Rendering List of Elements (6분) [먼저] 미션: `["Piotr","John","Terry"]` 이름 배열을 map으로 출력하고, Add 버튼으로 항목 추가. 확인: 카드가 3장 나오고 Add 누를 때마다 "New element" 카드가 늘어남. 콘솔에 key 경고가 없어야 함. 커밋 #031781b
+- [x] **L13** Importing and Exporting Components (4분) [실습] 미션: 프로젝트 루트에 components 폴더 만들고 Card.js 로 옮겨서 export default 붙이기. 상대경로(`../components/Card`)와 `@/components/Card` 두 방식 모두 해보기. 확인: 화면이 이동 전과 동일하게 보임. 규칙: R13 (my-app은 TS라 `@/*` 별칭이 tsconfig.json에 이미 있음. `@/components/Card` 그대로 사용 가능). 커밋 #4541f98
 
 ### 단계 2. 라우팅, 레이아웃, 링크 (L14~19, 약 1시간 15분)
 
@@ -558,8 +558,8 @@
 
 | 단계 | 내용 | 강의 | 상태 | 디펜스 |
 |---|---|---|---|---|
-| 0 | 환경과 프로젝트 구조 | L1~3 | in_progress | |
-| 1 | React 기초 | L4~13 | pending | |
+| 0 | 환경과 프로젝트 구조 | L1~3 | done | 2026-10-23 질문 3개 통과, 라이브 수정은 생략 |
+| 1 | React 기초 | L4~13 | defense | 2026-10-23 L4~13 실습 완료, 질문 3개 통과. 라이브 수정(highlight) 남음 |
 | 2 | 라우팅, 레이아웃, 링크 | L14~19 | pending | |
 | 3 | 데이터 가져오기와 느린 데이터 | L20~31 | pending | |
 | 4 | 스타일링 | L32~38 | pending | |
@@ -583,3 +583,8 @@
 - 2026-10-23: 엑셀 비유(절대참조, VLOOKUP, 요구사항 메모 vs 설치 영수증)가 잘 먹힘. 기술 용어는 비유 하나 + 실제 파일 예시 하나로 설명
 - 2026-10-23: 링고는 실습 위주로 하나씩 해 나가길 원함. 개념 강의를 길게 설명하지 말고 바로 만들게 한다
 - 2026-10-23: 강의 영상(Next 14)과 내 화면(Next 16)이 다르면 크게 혼란스러워함. 차이는 미리 짚어 준다
+- 2026-10-23: 링고가 "영상 안 보고 튜터랑만 학습"하기로 함. 1장 기본 루프의 영상 단계는 튜터의 짧은 개념 설명(3~5줄 + 예시 코드 조각 1개)으로 대체한다. [시청] 강의는 튜터가 핵심만 요약하고 확인 질문 1개, [실습]/[먼저]는 개념 설명 후 바로 미션. 힌트 3단계의 (3) "강사 커밋 diff"는 링고가 원할 때만
+- 2026-10-23: 디펜스 질문에 "가르쳐줘"라고 하면 바로 답을 준다. 왜 묻는지 근거를 궁금해함(인출 연습이라고 설명함)
+- 2026-10-23: L7(컴포넌트+props+3회 사용)에서 "너무 어렵다, 작게 작게". 미션은 한 메시지에 한 걸음(변화 1개, 개념 1개, 화면 결과 1개)으로 쪼갠다. 새 문법은 정확한 코드 조각을 보여 주고 "됨"을 받은 뒤 다음 걸음. 용어/도구(Tailwind 등)는 쓰기 전에 먼저 소개
+- 2026-10-23: useState를 엑셀/인쇄물 비유로 설명했을 때 두 번 "이해안감". C 코드(`int count; void setCount(v){count=v; redraw();}`)로 바꾸니 이해함. JS/React 동작은 C 코드 비유 우선, 엑셀 비유는 설정/도구 쪽에만
+- 2026-10-23: 컴퓨터 없이 개념만 읽은 L7~L11은 체크 안 함. 실습 목록은 `stage1-practice.md`. 다음 세션은 이 파일부터 실습
