@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Counter from "@/components/Counter";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +27,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <header className="p-10 border border-yellow-500 flex gap-4">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/about/projects">Projects</a>
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/about/projects">Projects</Link>
+          <Counter></Counter>
         </header>
 
         <main>{children}</main>
