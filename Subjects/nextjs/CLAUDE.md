@@ -188,9 +188,9 @@
   3. `<a href>` 대신 `<Link href>`를 쓰면 뭐가 달라지나?
   4. 라이브 수정: `/blog/[slug]/comments` 페이지를 추가해 "slug의 댓글"이라고 표시하기
 
-- [ ] **L14** Section Introduction: Routing, Pages & Layouts (1분) [선택] 1분 소개
-- [ ] **L15** File-system Routing & Creating Pages (7분) [실습] 미션: app/about/page.js 를 만들어 "About Me" 를 보이게 하고, app/about/projects/page.js 로 "Projects" 보이게 하기. page.js 대신 다른 파일명이면 404가 나는 것도 확인. 확인: http://localhost:3000/about 과 /about/projects 접속 시 각 문구가 보임. 폴더만 있고 page.js 없으면 404. 커밋 #04207c5
-- [ ] **L16** Layouts (UI Shared Between Pages) (5분) [실습] 미션: app/layout.js 에서 `{children}` 위에 `<header className="p-10 border border-yellow-500">I'm visible everywhere</header>` 추가하고 `{children}` 은 `<main>` 으로 감싸기. 확인: /, /about, /about/projects 모두 상단에 노란 박스가 보임. 규칙: R5. 커밋 #7127239
+- [x] **L14** Section Introduction: Routing, Pages & Layouts (1분) [선택] 1분 소개
+- [x] **L15** File-system Routing & Creating Pages (7분) [실습] 미션: app/about/page.js 를 만들어 "About Me" 를 보이게 하고, app/about/projects/page.js 로 "Projects" 보이게 하기. page.js 대신 다른 파일명이면 404가 나는 것도 확인. 확인: http://localhost:3000/about 과 /about/projects 접속 시 각 문구가 보임. 폴더만 있고 page.js 없으면 404. 커밋 #04207c5
+- [x] **L16** Layouts (UI Shared Between Pages) (5분) [실습] 미션: app/layout.js 에서 `{children}` 위에 `<header className="p-10 border border-yellow-500">I'm visible everywhere</header>` 추가하고 `{children}` 은 `<main>` 으로 감싸기. 확인: /, /about, /about/projects 모두 상단에 노란 박스가 보임. 규칙: R5. 커밋 #7127239
 - [ ] **L17** Links and Navigation (10분) [실습] 미션: Header 컴포넌트를 만들고 Home, About, Projects 메뉴를 a 태그로 먼저 만들어 카운터가 리셋되는 것을 본 뒤 Link 로 교체해서 카운터가 유지되는지 비교. 확인: 개발자도구 Network 탭(Preserve log 체크, Doc 필터)에서 a 태그는 문서 요청이 매번 나오고 Link 는 안 나옴. 카운터 숫자가 이동해도 계속 올라감. 커밋 #81ddc47
 - [ ] **L18** Understand Prefetching and Caching (10분) [시청] 미션: `npm run build` 후 `npm run start`. 홈에서 projects 페이지 문구를 수정해 다시 build, start 하고 홈에서 새로고침 없이 이동했을 때 옛 내용이 나오는지 확인. 규칙: R3
 - [ ] **L19** Dynamic Routes with Parameters (5분) [실습] 미션: app/blog/[slug]/page.js 만들고 `/blog/first`, `/blog/hello` 로 접속해 다른 글자가 나오게 하기. /blog 만 치면 404인 것도 확인. 확인: /blog/first 접속 시 "first" 가 화면에 보임. 규칙: R1. 커밋 #4ea97cb
@@ -550,7 +550,7 @@
 
 | 개념 | 처음 막힌 날 | 실패 횟수 | 메모 | 상태 |
 |---|---|---|---|---|
-| (아직 없음) | | | | |
+| children (태그 사이 내용이 props.children으로 넘어감) | 2026-10-23 | 2 | L8에서 읽기 1회 이해 못함, L16 layout에서 "children이 뭔지 모름". 링고가 짠 `<Card>AA</Card>` 예시 + "태그 = 함수 호출 Card({children})" + C 구조체로 설명하니 통함. 2026-10-23 확인 문제 3개 정답(연속 1회) | 흔들림 |
 
 ---
 
