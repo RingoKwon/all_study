@@ -15,11 +15,11 @@ export default function Home() {
       </button>
       {isVisible && (
         <div>
-          {
-            names.map((n) => (
-              <Card key={n}>{n}</Card>
-            ))
-          }
+          {names.map((n) => (
+            <Card highlight={n === "AA" ? true : false} key={n}>
+              {n}
+            </Card>
+          ))}
         </div>
       )}
     </div>
