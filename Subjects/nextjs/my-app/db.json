@@ -1,0 +1,22 @@
+{
+  "repos": [
+    {
+      "id": 1,
+      "title": "toggle-ai",
+      "description": "가지치기 AI 채팅",
+      "stargazers_count": 2 
+    },
+    {
+      "id": 2,
+      "title": "nextjs-study",
+      "description": "Next.js 공부 기록",
+      "stargazers_count": 3
+    },
+    {
+      "id": 3,
+      "title": "minishell",
+      "description": "C로 만든 작은 셸",
+      "stargazers_count": 7
+    }
+  ]
+}

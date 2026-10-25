@@ -193,7 +193,7 @@
 - [x] **L16** Layouts (UI Shared Between Pages) (5분) [실습] 미션: app/layout.js 에서 `{children}` 위에 `<header className="p-10 border border-yellow-500">I'm visible everywhere</header>` 추가하고 `{children}` 은 `<main>` 으로 감싸기. 확인: /, /about, /about/projects 모두 상단에 노란 박스가 보임. 규칙: R5. 커밋 #7127239
 - [x] **L17** Links and Navigation (10분) [실습] 미션: Header 컴포넌트를 만들고 Home, About, Projects 메뉴를 a 태그로 먼저 만들어 카운터가 리셋되는 것을 본 뒤 Link 로 교체해서 카운터가 유지되는지 비교. 확인: 개발자도구 Network 탭(Preserve log 체크, Doc 필터)에서 a 태그는 문서 요청이 매번 나오고 Link 는 안 나옴. 카운터 숫자가 이동해도 계속 올라감. 커밋 #81ddc47
 - [x] **L18** Understand Prefetching and Caching (10분) [시청] 미션: `npm run build` 후 `npm run start`. 홈에서 projects 페이지 문구를 수정해 다시 build, start 하고 홈에서 새로고침 없이 이동했을 때 옛 내용이 나오는지 확인. 규칙: R3
-- [ ] **L19** Dynamic Routes with Parameters (5분) [실습] 미션: app/blog/[slug]/page.js 만들고 `/blog/first`, `/blog/hello` 로 접속해 다른 글자가 나오게 하기. /blog 만 치면 404인 것도 확인. 확인: /blog/first 접속 시 "first" 가 화면에 보임. 규칙: R1. 커밋 #4ea97cb
+- [x] **L19** Dynamic Routes with Parameters (5분) [실습] 미션: app/blog/[slug]/page.js 만들고 `/blog/first`, `/blog/hello` 로 접속해 다른 글자가 나오게 하기. /blog 만 치면 404인 것도 확인. 확인: /blog/first 접속 시 "first" 가 화면에 보임. 규칙: R1. 커밋 #4ea97cb
 
 ### 단계 3. 데이터 가져오기와 느린 데이터 (L20~31, 약 2시간 10분)
 
@@ -207,18 +207,18 @@
   3. loading.tsx와 `<Suspense>`의 차이는? 각각 어떤 범위를 기다리게 하나?
   4. 라이브 수정: 목록 위에 "총 N개" 문구를 추가하되, 그 숫자가 목록과 같이 로딩되게 하기
 
-- [ ] **L20** Section Introduction: Data Fetching (and Caching!) (1분) [선택] 1분 소개
-- [ ] **L21** How Data Fetching Works in Next.js (Explanation and Recommendations) (7분) [시청] 미션: 확인 질문: "서버에서 fetch 하면 로딩 스피너가 왜 줄까?" (데이터를 가진 채로 화면을 만들어 보내서). 규칙: R3
-- [ ] **L22** Running a Mock JSON Server (8분) [실습] 미션: `npm install --save-dev json-server@0.17.4` (영상 중간에 강사가 버전 고정을 정정함). db.json 을 강의 링크에서 가져오고 scripts 에 `"json-server": "json-server --watch db.json --port 3001"` 추가 후 `npm run json-server`. 확인: http://localhost:3001/repos 에서 JSON 배열이 보임. 커밋 #ee33c52
-- [ ] **L23** Actually Fetching Data with fetch inside a Server Component (8분) [실습] 미션: Projects 페이지에서 `const response = await fetch(...)`, `const repos = await response.json()` 후 `repos.map` 으로 id를 key 삼아 title, description, stargazers_count 출력. 확인: /about/projects 에 저장소 목록이 보임. 안 보이면 json-server 가 켜져 있는지 확인. 커밋 #01022b8
-- [ ] **L24** Understanding Data Cache and Request Memoization (6분) [시청] 미션: 확인 질문: "데이터 캐시와 요청 메모이제이션의 차이?" (캐시는 요청을 넘어 서버에 저장, 메모이제이션은 한 번의 렌더 동안만). 규칙: R3
-- [ ] **L25** Fetch Cache in Practice (7분) [실습] 미션: db.json 의 첫 repo stargazers_count 를 바꾸고 새로고침. 옵션을 하나씩 바꿔가며 반영되는지 보기. revalidate 를 3초로 두고 3초 후 새로고침. 확인: no-store 에서는 새로고침 즉시 새 값. revalidate 3초에서는 3초 뒤 새로고침하면 새 값. 규칙: R3. 커밋 #b7dc6a2
-- [ ] **L26** Section Introduction: Dealing with Slow Data Sources (1분) [선택] 1분 소개
-- [ ] **L27** How a Slow Data Source Can Block Your Whole Page! (3분) [실습] 미션: json-server 종료 후 scripts 에 `--delay 5000` 추가해 다시 실행. /about/projects 새로고침해서 5초간 빈 화면 체험. 확인: http://localhost:3001/repos 가 5초 뒤에 열림. projects 페이지도 5초 뒤에 표시. 규칙: R3, R8. 커밋 #6aeee19
-- [ ] **L28** Loading UI and Streaming (10분) [실습] 미션: loading.js 를 만들어 `w-full h-24 animate-pulse bg-neutral-200 dark:bg-neutral-700` 막대 3개를 그리기. 홈에서 Projects 클릭 시 즉시 로딩 막대가 뜨는지 확인. 확인: 클릭 직후 회색 막대가 5초 보이다 실제 목록으로 교체됨. 로딩 중 헤더 링크로 다른 페이지 이동 가능. 커밋 #230a63a
-- [ ] **L29** Loading UI and React Suspense (4분) [시청] 미션: 확인 질문: "loading.js 와 Suspense 의 관계?" (loading.js 는 페이지 전체를 감싼 Suspense)
-- [ ] **L30** When to Use React Suspense? When Loading UI? Differences? (6분) [실습] 미션: ProjectList 컴포넌트를 분리해 Suspense 로 감싸고 "Hello, this is the list of my repos." 문구가 즉시 보이게 하기. 확인: 새로고침 시 제목과 문구는 바로 보이고 목록 자리만 회색 막대, 5초 뒤 목록으로 교체. 커밋 #7df558d
-- [ ] **L31** About Streaming and SSR (2분) [선택] 개념 복습용
+- [x] **L20** Section Introduction: Data Fetching (and Caching!) (1분) [선택] 1분 소개
+- [x] **L21** How Data Fetching Works in Next.js (Explanation and Recommendations) (7분) [시청] 미션: 확인 질문: "서버에서 fetch 하면 로딩 스피너가 왜 줄까?" (데이터를 가진 채로 화면을 만들어 보내서). 규칙: R3
+- [x] **L22** Running a Mock JSON Server (8분) [실습] 미션: `npm install --save-dev json-server@0.17.4` (영상 중간에 강사가 버전 고정을 정정함). db.json 을 강의 링크에서 가져오고 scripts 에 `"json-server": "json-server --watch db.json --port 3001"` 추가 후 `npm run json-server`. 확인: http://localhost:3001/repos 에서 JSON 배열이 보임. 커밋 #ee33c52
+- [x] **L23** Actually Fetching Data with fetch inside a Server Component (8분) [실습] 미션: Projects 페이지에서 `const response = await fetch(...)`, `const repos = await response.json()` 후 `repos.map` 으로 id를 key 삼아 title, description, stargazers_count 출력. 확인: /about/projects 에 저장소 목록이 보임. 안 보이면 json-server 가 켜져 있는지 확인. 커밋 #01022b8
+- [x] **L24** Understanding Data Cache and Request Memoization (6분) [시청] 미션: 확인 질문: "데이터 캐시와 요청 메모이제이션의 차이?" (캐시는 요청을 넘어 서버에 저장, 메모이제이션은 한 번의 렌더 동안만). 규칙: R3
+- [x] **L25** Fetch Cache in Practice (7분) [실습] 미션: db.json 의 첫 repo stargazers_count 를 바꾸고 새로고침. 옵션을 하나씩 바꿔가며 반영되는지 보기. revalidate 를 3초로 두고 3초 후 새로고침. 확인: no-store 에서는 새로고침 즉시 새 값. revalidate 3초에서는 3초 뒤 새로고침하면 새 값. 규칙: R3. 커밋 #b7dc6a2
+- [x] **L26** Section Introduction: Dealing with Slow Data Sources (1분) [선택] 1분 소개
+- [x] **L27** How a Slow Data Source Can Block Your Whole Page! (3분) [실습] 미션: json-server 종료 후 scripts 에 `--delay 5000` 추가해 다시 실행. /about/projects 새로고침해서 5초간 빈 화면 체험. 확인: http://localhost:3001/repos 가 5초 뒤에 열림. projects 페이지도 5초 뒤에 표시. 규칙: R3, R8. 커밋 #6aeee19
+- [x] **L28** Loading UI and Streaming (10분) [실습] 미션: loading.js 를 만들어 `w-full h-24 animate-pulse bg-neutral-200 dark:bg-neutral-700` 막대 3개를 그리기. 홈에서 Projects 클릭 시 즉시 로딩 막대가 뜨는지 확인. 확인: 클릭 직후 회색 막대가 5초 보이다 실제 목록으로 교체됨. 로딩 중 헤더 링크로 다른 페이지 이동 가능. 커밋 #230a63a
+- [x] **L29** Loading UI and React Suspense (4분) [시청] 미션: 확인 질문: "loading.js 와 Suspense 의 관계?" (loading.js 는 페이지 전체를 감싼 Suspense)
+- [x] **L30** When to Use React Suspense? When Loading UI? Differences? (6분) [실습] 미션: ProjectList 컴포넌트를 분리해 Suspense 로 감싸고 "Hello, this is the list of my repos." 문구가 즉시 보이게 하기. 확인: 새로고침 시 제목과 문구는 바로 보이고 목록 자리만 회색 막대, 5초 뒤 목록으로 교체. 커밋 #7df558d
+- [x] **L31** About Streaming and SSR (2분) [선택] 개념 복습용
 
 ### 단계 4. 스타일링 (L32~38, 약 1시간 30분)
 
@@ -551,6 +551,7 @@
 | 개념 | 처음 막힌 날 | 실패 횟수 | 메모 | 상태 |
 |---|---|---|---|---|
 | children (태그 사이 내용이 props.children으로 넘어감) | 2026-10-23 | 2 | L8에서 읽기 1회 이해 못함, L16 layout에서 "children이 뭔지 모름". 링고가 짠 `<Card>AA</Card>` 예시 + "태그 = 함수 호출 Card({children})" + C 구조체로 설명하니 통함. 2026-10-23 확인 문제 3개 정답(연속 1회) | 흔들림 |
+| JSX는 부모 하나로 감싸야 함 (`JSX expressions must have one parent element`) | 2026-10-23 | 2 | 1회: `{true && (<Card/><Card/>)}`, "JSX는 함수 호출, 자리 하나에 값 하나" + C `return a b;` 비유로 이해하고 div로 감싸 해결. 2회: 2026-10-25 `about/projects/page.tsx`의 return에 `<h1>`, `<h2>` 나란히. 힌트(전에 푼 것 떠올리기)만 줌. Fragment `<>` 는 아직 모름 | 흔들림 |
 
 ---
 
@@ -560,8 +561,8 @@
 |---|---|---|---|---|
 | 0 | 환경과 프로젝트 구조 | L1~3 | done | 2026-10-23 질문 3개 통과, 라이브 수정은 생략 |
 | 1 | React 기초 | L4~13 | done | 2026-10-23 질문 3개 통과, 라이브 수정(highlight prop, 삼항으로 className) 통과. 색 뒤바뀜 버그 스스로 수정 |
-| 2 | 라우팅, 레이아웃, 링크 | L14~19 | in_progress | |
-| 3 | 데이터 가져오기와 느린 데이터 | L20~31 | pending | |
+| 2 | 라우팅, 레이아웃, 링크 | L14~19 | done | 2026-10-24 질문 3개 통과(Q1 about 폴더 누락 후 교정), 라이브 수정 /blog/[slug]/comments 통과 (폴더 구조는 트리 그림으로 설명해야 이해함) |
+| 3 | 데이터 가져오기와 느린 데이터 | L20~31 | in_progress | |
 | 4 | 스타일링 | L32~38 | pending | |
 | 5 | 에러 처리 | L39~46 | pending | |
 | 6 | 이미지, 폰트, 메타데이터 | L47~62 | pending | |
