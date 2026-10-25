@@ -3,6 +3,7 @@ export default async function ProjectList() {
   const repos = await res.json();
   return (
     <div>
+      <p>Total: {repos.length}</p>
       <ul>
         {repos.map((repo: any) => (
           <li key={repo.id}>
