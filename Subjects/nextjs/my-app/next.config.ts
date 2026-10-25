@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   experimental: {
     agentFeedback: true,
   },
+  // L53 화질 비교용: Next 16 은 기본으로 quality 75 만 허용
+  images: {
+    qualities: [50, 75, 100],
+  },
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {

@@ -268,21 +268,21 @@
   2. `fill`을 쓸 때 부모에 `relative`가 필요한 이유는?
   3. 라이브 수정: 블로그 글 페이지 탭 제목을 "글제목 | 링고 블로그"로 만들기
 
-- [ ] **L47** Section Introduction: Images and Image Optimizations (1분) [선택] 소개만 있음
-- [ ] **L48** Problems with Images (10분) [시청] 미션: 확인 질문. 2MB 이미지 20장 페이지를 25Mbps(초당 약 3MB) 회선에서 열면 몇 초 걸릴까?
-- [ ] **L49** Core Web Vitals, LCP, CLS and Optimizing Images (7분) [선택] 링크 모음 위주
-- [ ] **L50** Adding Image Gallery (Not Optimized Yet!) (9분) [실습] 미션: public/images에 사진 4장을 넣고 /photos 페이지를 만들어 2열 갤러리를 구성한 뒤, F12 Network 탭 Img 필터에서 총 전송 용량 확인하기. 네트워크 속도 Fast 3G로 바꿔 로딩 체감하기. 확인: http://localhost:3000/photos 에서 사진 4장이 같은 높이로 크롭되어 표시됨. Network 탭 합계가 수십 MB(강의 기준 55MB)로 나옴. 커밋 #ed42075
-- [ ] **L51** Using the Next <Image> Component for Automatic Optimization (7분) [실습] 미션: img 4개를 Image로 교체(alt 필수)하고 Network 탭에서 `/_next/image?url=...&w=...&q=75` 요청과 전송 용량을 이전과 비교하기. 확인: Network 탭에서 이미지 요청 주소가 `/_next/image?...`로 바뀌고 용량이 수백 KB로 줄어듦. 주의: 상대경로 import는 동작한다. 커밋 #ff1509a
-- [ ] **L52** Responsive Image Size (7분) [실습] 미션: 4장 모두 fill, sizes를 적용하고 창 폭을 바꿔 가며 Network 탭 요청 URL의 `w=` 값이 달라지는지 비교하기. 확인: 넓은 창에서는 `w=` 값이 작게(약 50% 기준), 좁은 모바일 뷰에서는 크게 요청됨. 커밋 #ef1b90a
-- [ ] **L53** Placeholders & Image Quality (6분) [실습] 미션: 위 2장에 priority 적용, quality를 100과 50으로 바꿔 용량 차이 비교, 전체에 blur 적용 후 Fast 3G로 흐린 자리표시 확인. 확인: Network 탭에서 `q=50` 요청이 `q=100`보다 훨씬 작음(강의에서 약 19KB 대비 139KB). 느린 네트워크에서 흐린 사진이 먼저 보임. 규칙: R7. 커밋 #07a9239
-- [ ] **L54** Measuring the Page with Lighthouse (3분) [실습] 미션: about, 홈 등에 남은 throw 제거, 빌드와 start 후 /photos 에서 Lighthouse "Analyze page load" 실행하고 성능 점수 기록하기. 이미지 quality를 낮춘 뒤 다시 측정해 점수 비교. 확인: http://localhost:3000/photos (start 모드)에서 Lighthouse 점수가 표시됨. 강의에서는 성능 약 98점. 규칙: R12
-- [ ] **L55** Section Introduction: Fonts, OpenGraph, Scrips, Metadata (1분) [선택] 소개만 있음
-- [ ] **L56** Optimizing Fonts with Next.js (Google and Local Fonts!) (5분) [실습] 미션: layout.js의 폰트를 Roboto로 바꾸고 F12 Elements > Computed > font-family에서 Roboto 확인하기. 확인: 개발자도구에서 font-family가 Roboto로 표시됨. 글자 모양이 바뀜. 규칙: R5. 커밋 #b2a2dc7
-- [ ] **L57** Optimizing Scripts (Connecting with External Services like Analytics, Chatbots) (9분) [실습] 미션: 강사 저장소에서 chatbot.js를 받아 public에 넣고, Chatbot 컴포넌트를 만들어 layout에 넣은 뒤 페이지가 다 뜬 다음에 챗봇 박스가 나타나는지 확인하기. 확인: 아무 페이지나 열면 화면이 먼저 뜨고 몇 초 뒤 하단에 작은 챗봇 UI가 나타남. 콘솔에 스크립트 로그 출력. 커밋 #637d2b5
-- [ ] **L58** Introduction to Metadata (3분) [시청] 미션: 확인 질문. 정적과 동적 메타데이터는 언제 갈라 쓸까?
-- [ ] **L59** An Overview of Metadata Attributes (7분) [실습] 미션: layout.js의 title과 description을 본인 정보로 바꾸고 F12 Elements의 `<head>`에서 `<meta name="description">`가 바뀌었는지 확인하기. 확인: 브라우저 탭 제목이 바뀌고, 페이지 소스 보기(Cmd+U)에 설정한 description이 보임. 커밋 #9517354
-- [ ] **L60** Static Metadata (4분) [실습] 미션: 루트 layout에 title template을 설정하고 about, projects, photos 페이지에 각각 title을 지정해 탭 제목이 "About me | 내 이름" 형태로 나오게 하기. 확인: /about 탭 제목이 "About me | 내 이름". 홈은 default 제목. description은 부모 값이 상속됨. 커밋 #d3fe221
-- [ ] **L61** Dynamic Metadata (5분) [실습] 미션: `/blog/first` 와 `/blog/second` 탭 제목이 각각 "hello first", "hello second"로 나오게 generateMetadata 만들기. 확인: /blog/first 탭 제목이 "hello first | 내 이름"(template 적용). description은 레이아웃 값 유지. 규칙: R1. 커밋 #20a848c
+- [x] **L47** Section Introduction: Images and Image Optimizations (1분) [선택] 소개만 있음
+- [x] **L48** Problems with Images (10분) [시청] 미션: 확인 질문. 2MB 이미지 20장 페이지를 25Mbps(초당 약 3MB) 회선에서 열면 몇 초 걸릴까?
+- [x] **L49** Core Web Vitals, LCP, CLS and Optimizing Images (7분) [선택] 링크 모음 위주
+- [x] **L50** Adding Image Gallery (Not Optimized Yet!) (9분) [실습] 미션: public/images에 사진 4장을 넣고 /photos 페이지를 만들어 2열 갤러리를 구성한 뒤, F12 Network 탭 Img 필터에서 총 전송 용량 확인하기. 네트워크 속도 Fast 3G로 바꿔 로딩 체감하기. 확인: http://localhost:3000/photos 에서 사진 4장이 같은 높이로 크롭되어 표시됨. Network 탭 합계가 수십 MB(강의 기준 55MB)로 나옴. 커밋 #ed42075
+- [x] **L51** Using the Next <Image> Component for Automatic Optimization (7분) [실습] 미션: img 4개를 Image로 교체(alt 필수)하고 Network 탭에서 `/_next/image?url=...&w=...&q=75` 요청과 전송 용량을 이전과 비교하기. 확인: Network 탭에서 이미지 요청 주소가 `/_next/image?...`로 바뀌고 용량이 수백 KB로 줄어듦. 주의: 상대경로 import는 동작한다. 커밋 #ff1509a
+- [x] **L52** Responsive Image Size (7분) [실습] 미션: 4장 모두 fill, sizes를 적용하고 창 폭을 바꿔 가며 Network 탭 요청 URL의 `w=` 값이 달라지는지 비교하기. 확인: 넓은 창에서는 `w=` 값이 작게(약 50% 기준), 좁은 모바일 뷰에서는 크게 요청됨. 커밋 #ef1b90a
+- [x] **L53** Placeholders & Image Quality (6분) [실습] 미션: 위 2장에 priority 적용, quality를 100과 50으로 바꿔 용량 차이 비교, 전체에 blur 적용 후 Fast 3G로 흐린 자리표시 확인. 확인: Network 탭에서 `q=50` 요청이 `q=100`보다 훨씬 작음(강의에서 약 19KB 대비 139KB). 느린 네트워크에서 흐린 사진이 먼저 보임. 규칙: R7. 커밋 #07a9239
+- [x] **L54** Measuring the Page with Lighthouse (3분) (2026-10-25 건너뜀: 이미지 위주라 생략, 배포 단계에서 Lighthouse 다시 볼 것) [실습] 미션: about, 홈 등에 남은 throw 제거, 빌드와 start 후 /photos 에서 Lighthouse "Analyze page load" 실행하고 성능 점수 기록하기. 이미지 quality를 낮춘 뒤 다시 측정해 점수 비교. 확인: http://localhost:3000/photos (start 모드)에서 Lighthouse 점수가 표시됨. 강의에서는 성능 약 98점. 규칙: R12
+- [x] **L55** Section Introduction: Fonts, OpenGraph, Scrips, Metadata (1분) [선택] 소개만 있음
+- [x] **L56** Optimizing Fonts with Next.js (Google and Local Fonts!) (5분) [실습] 미션: layout.js의 폰트를 Roboto로 바꾸고 F12 Elements > Computed > font-family에서 Roboto 확인하기. 확인: 개발자도구에서 font-family가 Roboto로 표시됨. 글자 모양이 바뀜. 규칙: R5. 커밋 #b2a2dc7
+- [x] **L57** Optimizing Scripts (Connecting with External Services like Analytics, Chatbots) (9분) [실습] 미션: 강사 저장소에서 chatbot.js를 받아 public에 넣고, Chatbot 컴포넌트를 만들어 layout에 넣은 뒤 페이지가 다 뜬 다음에 챗봇 박스가 나타나는지 확인하기. 확인: 아무 페이지나 열면 화면이 먼저 뜨고 몇 초 뒤 하단에 작은 챗봇 UI가 나타남. 콘솔에 스크립트 로그 출력. 커밋 #637d2b5
+- [x] **L58** Introduction to Metadata (3분) [시청] 미션: 확인 질문. 정적과 동적 메타데이터는 언제 갈라 쓸까?
+- [x] **L59** An Overview of Metadata Attributes (7분) [실습] 미션: layout.js의 title과 description을 본인 정보로 바꾸고 F12 Elements의 `<head>`에서 `<meta name="description">`가 바뀌었는지 확인하기. 확인: 브라우저 탭 제목이 바뀌고, 페이지 소스 보기(Cmd+U)에 설정한 description이 보임. 커밋 #9517354
+- [x] **L60** Static Metadata (4분) [실습] 미션: 루트 layout에 title template을 설정하고 about, projects, photos 페이지에 각각 title을 지정해 탭 제목이 "About me | 내 이름" 형태로 나오게 하기. 확인: /about 탭 제목이 "About me | 내 이름". 홈은 default 제목. description은 부모 값이 상속됨. 커밋 #d3fe221
+- [x] **L61** Dynamic Metadata (5분) [실습] 미션: `/blog/first` 와 `/blog/second` 탭 제목이 각각 "hello first", "hello second"로 나오게 generateMetadata 만들기. 확인: /blog/first 탭 제목이 "hello first | 내 이름"(template 적용). description은 레이아웃 값 유지. 규칙: R1. 커밋 #20a848c
 - [ ] **L62** Dynamic (OpenGraph) Image Generation (12분) [실습] 미션: opengraph-image.js를 만들어 `/blog/first` 의 og:image URL을 열어 제목이 박힌 이미지가 나오게 하고, 글씨 크기와 방향을 바꿔 보기. 확인: F12 Elements `<head>`의 `og:image` content URL을 새 탭에서 열면 PNG 이미지 표시. 제목이 slug별로 달라짐. 규칙: R1. 커밋 #e44f0e3
 
 ### 단계 7. 블로그 본체: MDX, 목록, 필터, 정렬, 페이지네이션 (L63~80, 약 4시간)
@@ -565,7 +565,7 @@
 | 3 | 데이터 가져오기와 느린 데이터 | L20~31 | done | 2026-10-25 질문 3개 통과(Q2 revalidate 단위 초/next 키 교정), 라이브 수정 "Total: N" ProjectList 안에 넣어 통과. map, fetch/json 분리 이유, Promise는 별도 설명 필요했음 |
 | 4 | 스타일링 | L32~38 | done | 2026-10-25 방어 통과 (Q1 md: 방향 교정, 라이브 수정 lg:grid-cols-3) |
 | 5 | 에러 처리 | L39~46 | done | 2026-10-25 방어 통과 (Q2 about/layout 에러는 global-error 가 아니라 한 칸 위 app/error.tsx 가 잡는다고 교정), 라이브 수정은 L46 블로그 전용 404(app/blog/not-found.tsx + [slug]/layout.tsx notFound)로 대체. reset vs retry 는 retry-lab 으로 확인 |
-| 6 | 이미지, 폰트, 메타데이터 | L47~62 | pending | |
+| 6 | 이미지, 폰트, 메타데이터 | L47~62 | in_progress | |
 | 7 | 블로그 본체 | L63~80 | pending | |
 | 8 | 다크모드, 쿠키, 배포 | L81~95, L200~206 | pending | |
 | 9 | 가계부 UI 부품 | L96~106 | pending | |
