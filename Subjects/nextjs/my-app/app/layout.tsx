@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Counter from "@/components/Counter";
-import Link from "next/link";
+import Navigation from "@/components/Navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,15 +25,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <header className="p-10 border border-yellow-500 flex gap-4">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/about/projects">Projects</Link>
-          <Counter></Counter>
-        </header>
-
-        <main>{children}</main>
+      <body className="min-h-full flex flex-col bg-white text-gray-800 dark:bg-gray-950 dark:text-gray-300">
+        <div className="w-full max-w-2xl mx-auto px-4">
+          <header className="p-10 border border-yellow-500 flex items-center justify-between">
+            <div className="hidden md:block font-bold">Ringo</div>
+            <Navigation />
+            <Counter></Counter>
+          </header>
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );

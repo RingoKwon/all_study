@@ -230,13 +230,13 @@
   2. flex와 grid를 각각 어디에 썼고 왜 그걸 골랐나?
   3. 라이브 수정: 카드 그리드를 큰 화면에서 3열로 바꾸기
 
-- [ ] **L32** Section Introduction: Styling With Tailwind and CSS Modules (1분) [선택] 소개만 있음
-- [ ] **L33** Styling Options in Next.js (5분) [시청] 미션: 확인 질문. `.module.css`에서 `module`을 빼면 어떻게 될까? (답은 36강에서 확인)
-- [ ] **L34** Getting Started with Tailwind CSS (10분) [실습] 미션: (1) 확장 두 개 설치 (2) globals.css에서 기본 CSS를 지우고 body에 흰 배경, 회색 글씨, 다크모드 때 어두운 배경과 밝은 글씨 지정 (3) 본문 폭을 가운데 정렬하고 최대 폭 제한 (4) macOS 외관 설정을 라이트와 다크로 바꿔 보며 색 변화 확인. 확인: http://localhost:3000 접속 시 본문이 가운데 좁게 정렬됨. 시스템 다크모드 전환 후 새로고침하면 배경이 어두워짐. 창 폭을 줄이면 좌우 여백이 사라지고 꽉 참. 규칙: R5. 커밋 #68461c3
-- [ ] **L35** Flex Container & Responsive Design (9분) [실습] 미션: header 안의 메뉴 코드를 `components/navigation.js`로 분리하고, 좁은 화면에서는 세로, 768px 이상에서는 가로로 배치되게 만들기. 확인: 브라우저 창 폭을 줄였다 늘리면 메뉴가 세로와 가로로 바뀜. 개발자도구(F12) 반응형 모드로 확인. 커밋 #bd7ce3d
-- [ ] **L36** Adding a CSS Module and Using Tailwind Inside (5분) [실습] 미션: navigation.module.css를 만들고 `.link` 클래스에 패딩, hover 배경색, 글자 크기를 지정한 뒤 메뉴 링크 3개에 적용하기. 확인: 메뉴에 마우스를 올리면 회색 배경이 나타남. F12 Elements에서 클래스 이름이 `navigation_link__abc12`처럼 자동 생성된 것이 보임. 규칙: R5. 커밋 #8f943c6
-- [ ] **L37** Positioning Elements with Flex (6분) [실습] 미션: header에 로고(본인 이름), 메뉴, 오른쪽 끝 "dark toggle" 글자를 배치하고, 모바일에서는 로고가 사라지게 하기. 확인: 넓은 화면에서 왼쪽 로고, 가운데 메뉴, 오른쪽 끝 토글 글자. 좁은 화면에서 로고가 사라짐. 커밋 #ad21d2f
-- [ ] **L38** Using Grid and Making Customizable Components (9분) [실습] 미션: card.js에 className prop 추가 후, projects 페이지에서 모바일 1열 / 768px 이상 2열 카드 그리드를 만들고 카드 높이를 같게 맞추기. 확인: /projects 에서 넓은 화면 2열, 좁은 화면 1열. 카드 안에 제목 왼쪽, 별 개수 오른쪽. 규칙: R3. 커밋 #6422583
+- [x] **L32** Section Introduction: Styling With Tailwind and CSS Modules (1분) [선택] 소개만 있음
+- [x] **L33** Styling Options in Next.js (5분) [시청] 미션: 확인 질문. `.module.css`에서 `module`을 빼면 어떻게 될까? (답은 36강에서 확인)
+- [x] **L34** Getting Started with Tailwind CSS (10분) [실습] 미션: (1) 확장 두 개 설치 (2) globals.css에서 기본 CSS를 지우고 body에 흰 배경, 회색 글씨, 다크모드 때 어두운 배경과 밝은 글씨 지정 (3) 본문 폭을 가운데 정렬하고 최대 폭 제한 (4) macOS 외관 설정을 라이트와 다크로 바꿔 보며 색 변화 확인. 확인: http://localhost:3000 접속 시 본문이 가운데 좁게 정렬됨. 시스템 다크모드 전환 후 새로고침하면 배경이 어두워짐. 창 폭을 줄이면 좌우 여백이 사라지고 꽉 참. 규칙: R5. 커밋 #68461c3
+- [x] **L35** Flex Container & Responsive Design (9분) [실습] 미션: header 안의 메뉴 코드를 `components/navigation.js`로 분리하고, 좁은 화면에서는 세로, 768px 이상에서는 가로로 배치되게 만들기. 확인: 브라우저 창 폭을 줄였다 늘리면 메뉴가 세로와 가로로 바뀜. 개발자도구(F12) 반응형 모드로 확인. 커밋 #bd7ce3d
+- [x] **L36** Adding a CSS Module and Using Tailwind Inside (5분) [실습] 미션: navigation.module.css를 만들고 `.link` 클래스에 패딩, hover 배경색, 글자 크기를 지정한 뒤 메뉴 링크 3개에 적용하기. 확인: 메뉴에 마우스를 올리면 회색 배경이 나타남. F12 Elements에서 클래스 이름이 `navigation_link__abc12`처럼 자동 생성된 것이 보임. 규칙: R5. 커밋 #8f943c6
+- [x] **L37** Positioning Elements with Flex (6분) [실습] 미션: header에 로고(본인 이름), 메뉴, 오른쪽 끝 "dark toggle" 글자를 배치하고, 모바일에서는 로고가 사라지게 하기. 확인: 넓은 화면에서 왼쪽 로고, 가운데 메뉴, 오른쪽 끝 토글 글자. 좁은 화면에서 로고가 사라짐. 커밋 #ad21d2f
+- [x] **L38** Using Grid and Making Customizable Components (9분) [실습] 미션: card.js에 className prop 추가 후, projects 페이지에서 모바일 1열 / 768px 이상 2열 카드 그리드를 만들고 카드 높이를 같게 맞추기. 확인: /projects 에서 넓은 화면 2열, 좁은 화면 1열. 카드 안에 제목 왼쪽, 별 개수 오른쪽. 규칙: R3. 커밋 #6422583
 
 ### 단계 5. 에러 처리 (L39~46, 약 1시간 20분)
 
@@ -563,7 +563,7 @@
 | 1 | React 기초 | L4~13 | done | 2026-10-23 질문 3개 통과, 라이브 수정(highlight prop, 삼항으로 className) 통과. 색 뒤바뀜 버그 스스로 수정 |
 | 2 | 라우팅, 레이아웃, 링크 | L14~19 | done | 2026-10-24 질문 3개 통과(Q1 about 폴더 누락 후 교정), 라이브 수정 /blog/[slug]/comments 통과 (폴더 구조는 트리 그림으로 설명해야 이해함) |
 | 3 | 데이터 가져오기와 느린 데이터 | L20~31 | done | 2026-10-25 질문 3개 통과(Q2 revalidate 단위 초/next 키 교정), 라이브 수정 "Total: N" ProjectList 안에 넣어 통과. map, fetch/json 분리 이유, Promise는 별도 설명 필요했음 |
-| 4 | 스타일링 | L32~38 | pending | |
+| 4 | 스타일링 | L32~38 | done | 2026-10-25 방어 통과 (Q1 md: 방향 교정, 라이브 수정 lg:grid-cols-3) |
 | 5 | 에러 처리 | L39~46 | pending | |
 | 6 | 이미지, 폰트, 메타데이터 | L47~62 | pending | |
 | 7 | 블로그 본체 | L63~80 | pending | |
