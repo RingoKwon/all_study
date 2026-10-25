@@ -248,14 +248,14 @@
   2. 같은 폴더의 layout에서 난 에러를 그 폴더의 error.tsx가 못 잡는 이유는?
   3. 라이브 수정: `/blog/없는글`로 가면 블로그 전용 404가 뜨게 하기
 
-- [ ] **L39** Section Introduction: Error Management in Next (2분) [선택] 소개만 있음
-- [ ] **L40** Error Handling on Pages (7분) [실습] 미션: project-list에 일부러 throw를 넣어 /projects 가 깨지는 것을 보고, projects 폴더에 error.js를 만들어 에러 문구가 대신 보이게 하기. 확인: /projects 접속 시 헤더와 메뉴는 그대로, 본문만 "Something went wrong" 화면. error.js를 지우면 전체 오류 화면. 커밋 #68c7327
-- [ ] **L41** Error Boundaries (5분) [실습] 미션: error.js 방식 대신 ErrorBoundary를 설치해 쓰고, 에러가 나도 페이지 제목은 보이고 프로젝트 목록 자리에만 안내 문구가 나오게 하기. 확인: /projects 에서 제목은 유지되고 목록 영역만 "Cannot fetch projects currently" 표시. 주의: 라이브러리 버전에 따라 서버 컴포넌트 페이지에서 직접 import하면 "class component / createContext in Server Component" 오류가 날 수 있다. 커밋 #4406348
-- [ ] **L42** Error Hierarchy - Where Does the Error Get Catched? (5분) [실습] 미션: error.js를 about 폴더로 옮기고 about, projects, 홈 순서로 throw를 넣어 어느 곳에서 잡히고 어디서 앱 전체가 죽는지 표로 정리하기. 확인: /about 과 /about/projects 는 같은 error.js 화면이 나옴. 홈은 전체 크래시. 확인 후 모든 throw 제거. 커밋 #eb1294e
-- [ ] **L43** Nested Layouts (5분) [실습] 미션: about 폴더에 layout.js를 만들어 about과 projects 아래에 공통 "You might also like" 영역을 표시하고, 홈에는 보이지 않는지 확인하기. 확인: /about 과 /about/projects 하단에 같은 목록이 보임. 홈(/)에는 없음. 커밋 #86448b3
-- [ ] **L44** Error Handling in Layouts and in the Root Layout (6분) [실습] 미션: layout 에러를 상위 app/error.js가 잡는 것을 확인한 뒤 global-error.js를 만들고, 빌드와 start로 `/?error=1`에서 Oops 화면 보기. 확인: 개발 모드 `/about` 에서 상위 error.js 화면. 프로덕션 `http://localhost:3000/?error=1` 에서 "Oops". dev 모드에서는 global-error가 안 보이는 것이 정상. 규칙: R1. 커밋 #e5af600
-- [ ] **L45** Recovering from the Errors (5분) [실습] 미션: 랜덤 에러를 심고 "Try again" 버튼이 reset만 쓸 때와 startTransition + refresh + reset 조합일 때 복구 여부를 비교하기. 끝나면 랜덤 throw 삭제. 확인: /about 새로고침을 반복하다 에러 화면에서 Try again을 누르면 몇 번 안에 정상 about 화면으로 돌아옴. 커밋 #8af2d87
-- [ ] **L46** Custom Not Found (404분) [실습] 미션: 전역 not-found.js를 만들고, blog/[slug] 안에 전용 not-found.js도 만든 뒤 `/blog/first`, `/blog/xxx`, `/abc` 세 주소를 비교하기. 확인: `/blog/first` 정상 표시. `/blog/xxx` 는 블로그 전용 404(추천 링크 포함). `/abc` 는 전역 404. 규칙: R1. 커밋 #8eb1ce6
+- [x] **L39** Section Introduction: Error Management in Next (2분) [선택] 소개만 있음
+- [x] **L40** Error Handling on Pages (7분) [실습] 미션: project-list에 일부러 throw를 넣어 /projects 가 깨지는 것을 보고, projects 폴더에 error.js를 만들어 에러 문구가 대신 보이게 하기. 확인: /projects 접속 시 헤더와 메뉴는 그대로, 본문만 "Something went wrong" 화면. error.js를 지우면 전체 오류 화면. 커밋 #68c7327
+- [x] **L41** Error Boundaries (5분) [실습] 미션: error.js 방식 대신 ErrorBoundary를 설치해 쓰고, 에러가 나도 페이지 제목은 보이고 프로젝트 목록 자리에만 안내 문구가 나오게 하기. 확인: /projects 에서 제목은 유지되고 목록 영역만 "Cannot fetch projects currently" 표시. 주의: 라이브러리 버전에 따라 서버 컴포넌트 페이지에서 직접 import하면 "class component / createContext in Server Component" 오류가 날 수 있다. 커밋 #4406348
+- [x] **L42** Error Hierarchy - Where Does the Error Get Catched? (5분) [실습] 미션: error.js를 about 폴더로 옮기고 about, projects, 홈 순서로 throw를 넣어 어느 곳에서 잡히고 어디서 앱 전체가 죽는지 표로 정리하기. 확인: /about 과 /about/projects 는 같은 error.js 화면이 나옴. 홈은 전체 크래시. 확인 후 모든 throw 제거. 커밋 #eb1294e
+- [x] **L43** Nested Layouts (5분) [실습] 미션: about 폴더에 layout.js를 만들어 about과 projects 아래에 공통 "You might also like" 영역을 표시하고, 홈에는 보이지 않는지 확인하기. 확인: /about 과 /about/projects 하단에 같은 목록이 보임. 홈(/)에는 없음. 커밋 #86448b3
+- [x] **L44** Error Handling in Layouts and in the Root Layout (6분) [실습] 미션: layout 에러를 상위 app/error.js가 잡는 것을 확인한 뒤 global-error.js를 만들고, 빌드와 start로 `/?error=1`에서 Oops 화면 보기. 확인: 개발 모드 `/about` 에서 상위 error.js 화면. 프로덕션 `http://localhost:3000/?error=1` 에서 "Oops". dev 모드에서는 global-error가 안 보이는 것이 정상. 규칙: R1. 커밋 #e5af600
+- [x] **L45** Recovering from the Errors (5분) [실습] 미션: 랜덤 에러를 심고 "Try again" 버튼이 reset만 쓸 때와 startTransition + refresh + reset 조합일 때 복구 여부를 비교하기. 끝나면 랜덤 throw 삭제. 확인: /about 새로고침을 반복하다 에러 화면에서 Try again을 누르면 몇 번 안에 정상 about 화면으로 돌아옴. 커밋 #8af2d87
+- [x] **L46** Custom Not Found (404분) [실습] 미션: 전역 not-found.js를 만들고, blog/[slug] 안에 전용 not-found.js도 만든 뒤 `/blog/first`, `/blog/xxx`, `/abc` 세 주소를 비교하기. 확인: `/blog/first` 정상 표시. `/blog/xxx` 는 블로그 전용 404(추천 링크 포함). `/abc` 는 전역 404. 규칙: R1. 커밋 #8eb1ce6
 
 ### 단계 6. 이미지, 폰트, 메타데이터 (L47~62, 약 3시간)
 
@@ -564,7 +564,7 @@
 | 2 | 라우팅, 레이아웃, 링크 | L14~19 | done | 2026-10-24 질문 3개 통과(Q1 about 폴더 누락 후 교정), 라이브 수정 /blog/[slug]/comments 통과 (폴더 구조는 트리 그림으로 설명해야 이해함) |
 | 3 | 데이터 가져오기와 느린 데이터 | L20~31 | done | 2026-10-25 질문 3개 통과(Q2 revalidate 단위 초/next 키 교정), 라이브 수정 "Total: N" ProjectList 안에 넣어 통과. map, fetch/json 분리 이유, Promise는 별도 설명 필요했음 |
 | 4 | 스타일링 | L32~38 | done | 2026-10-25 방어 통과 (Q1 md: 방향 교정, 라이브 수정 lg:grid-cols-3) |
-| 5 | 에러 처리 | L39~46 | pending | |
+| 5 | 에러 처리 | L39~46 | done | 2026-10-25 방어 통과 (Q2 about/layout 에러는 global-error 가 아니라 한 칸 위 app/error.tsx 가 잡는다고 교정), 라이브 수정은 L46 블로그 전용 404(app/blog/not-found.tsx + [slug]/layout.tsx notFound)로 대체. reset vs retry 는 retry-lab 으로 확인 |
 | 6 | 이미지, 폰트, 메타데이터 | L47~62 | pending | |
 | 7 | 블로그 본체 | L63~80 | pending | |
 | 8 | 다크모드, 쿠키, 배포 | L81~95, L200~206 | pending | |
