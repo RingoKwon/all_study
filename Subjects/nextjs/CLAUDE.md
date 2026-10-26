@@ -283,7 +283,7 @@
 - [x] **L59** An Overview of Metadata Attributes (7분) [실습] 미션: layout.js의 title과 description을 본인 정보로 바꾸고 F12 Elements의 `<head>`에서 `<meta name="description">`가 바뀌었는지 확인하기. 확인: 브라우저 탭 제목이 바뀌고, 페이지 소스 보기(Cmd+U)에 설정한 description이 보임. 커밋 #9517354
 - [x] **L60** Static Metadata (4분) [실습] 미션: 루트 layout에 title template을 설정하고 about, projects, photos 페이지에 각각 title을 지정해 탭 제목이 "About me | 내 이름" 형태로 나오게 하기. 확인: /about 탭 제목이 "About me | 내 이름". 홈은 default 제목. description은 부모 값이 상속됨. 커밋 #d3fe221
 - [x] **L61** Dynamic Metadata (5분) [실습] 미션: `/blog/first` 와 `/blog/second` 탭 제목이 각각 "hello first", "hello second"로 나오게 generateMetadata 만들기. 확인: /blog/first 탭 제목이 "hello first | 내 이름"(template 적용). description은 레이아웃 값 유지. 규칙: R1. 커밋 #20a848c
-- [ ] **L62** Dynamic (OpenGraph) Image Generation (12분) [실습] 미션: opengraph-image.js를 만들어 `/blog/first` 의 og:image URL을 열어 제목이 박힌 이미지가 나오게 하고, 글씨 크기와 방향을 바꿔 보기. 확인: F12 Elements `<head>`의 `og:image` content URL을 새 탭에서 열면 PNG 이미지 표시. 제목이 slug별로 달라짐. 규칙: R1. 커밋 #e44f0e3
+- [x] **L62** Dynamic (OpenGraph) Image Generation (12분) [실습] 미션: opengraph-image.js를 만들어 `/blog/first` 의 og:image URL을 열어 제목이 박힌 이미지가 나오게 하고, 글씨 크기와 방향을 바꿔 보기. 확인: F12 Elements `<head>`의 `og:image` content URL을 새 탭에서 열면 PNG 이미지 표시. 제목이 slug별로 달라짐. 규칙: R1. 커밋 #e44f0e3
 
 ### 단계 7. 블로그 본체: MDX, 목록, 필터, 정렬, 페이지네이션 (L63~80, 약 4시간)
 
@@ -565,7 +565,7 @@
 | 3 | 데이터 가져오기와 느린 데이터 | L20~31 | done | 2026-10-25 질문 3개 통과(Q2 revalidate 단위 초/next 키 교정), 라이브 수정 "Total: N" ProjectList 안에 넣어 통과. map, fetch/json 분리 이유, Promise는 별도 설명 필요했음 |
 | 4 | 스타일링 | L32~38 | done | 2026-10-25 방어 통과 (Q1 md: 방향 교정, 라이브 수정 lg:grid-cols-3) |
 | 5 | 에러 처리 | L39~46 | done | 2026-10-25 방어 통과 (Q2 about/layout 에러는 global-error 가 아니라 한 칸 위 app/error.tsx 가 잡는다고 교정), 라이브 수정은 L46 블로그 전용 404(app/blog/not-found.tsx + [slug]/layout.tsx notFound)로 대체. reset vs retry 는 retry-lab 으로 확인 |
-| 6 | 이미지, 폰트, 메타데이터 | L47~62 | in_progress | |
+| 6 | 이미지, 폰트, 메타데이터 | L47~62 | done | 2026-10-26 방어 통과 (Q1 용량 7.5MB→150kB, /_next/image 주소. Q2 fill+relative 는 relative 지워 보는 실험으로 확인). Q3 탭 제목은 L61 template+generateMetadata 로 대체. L54 Lighthouse, blur 는 건너뜀. L62 og 이미지 파일은 Claude 가 만들고 링고가 크기/방향 수정 |
 | 7 | 블로그 본체 | L63~80 | pending | |
 | 8 | 다크모드, 쿠키, 배포 | L81~95, L200~206 | pending | |
 | 9 | 가계부 UI 부품 | L96~106 | pending | |
