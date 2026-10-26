@@ -298,7 +298,7 @@
   3. `getPosts`에서 `Promise.all`이 왜 필요한가?
   4. 라이브 수정: "제목 오름차순" 정렬 옵션 추가
 
-- [ ] **L63** Section Introduction: Markdown and MDX (1분) [선택] 소개 영상, 1분
+- [x] **L63** Section Introduction: Markdown and MDX (1분) [선택] 소개 영상, 1분
 - [ ] **L64** Setting Up Markdown and MDX and First MDX Page! (8분) [실습] 미션: 문서 복사 명령으로 패키지 설치 후 about 페이지를 page.mdx로 바꾸기. 제목, 굵은 글씨, 목록을 넣어보기. 설정 변경 후 dev 서버를 재시작해야 함. 확인: http://localhost:3000/about 접속. 굵게, 기울임, 목록은 보이지만 제목(#)이 본문과 같은 크기로 나오면 정상 상태. 주의: Next 문서의 최신 MDX 설치 안내를 따를 것(패키지 목록과 next.config 형식이 다를 수 있음, next.config.mjs 사용 가능). 커밋 #d4e9c06
 - [ ] **L65** Styling MDX - Tailwind Typography (5분) [실습] 미션: 플러그인 설치 후 등록, prose 클래스 적용. 시스템 다크모드를 바꿔 dark:prose-invert 효과 확인. 확인: /about에서 h1이 크게 나오고 목록 점이 보이면 성공. 다크모드에서 글자가 흰색으로 반전되어야 함. 규칙: R5. 커밋 #544ee1a
 - [ ] **L66** MDX Remote (Rendering any Markdown) (5분) [실습] 미션: 샘플 마크다운 문자열을 source로 넣고 /blog/아무거나 로 접속해 모두 같은 글이 나오는지 확인. article에 prose 적용. 확인: http://localhost:3000/blog/first 와 /blog/second 모두 같은 마크다운이 서식 적용되어 보임. 규칙: R1. 커밋 #8864b09
@@ -566,7 +566,7 @@
 | 4 | 스타일링 | L32~38 | done | 2026-10-25 방어 통과 (Q1 md: 방향 교정, 라이브 수정 lg:grid-cols-3) |
 | 5 | 에러 처리 | L39~46 | done | 2026-10-25 방어 통과 (Q2 about/layout 에러는 global-error 가 아니라 한 칸 위 app/error.tsx 가 잡는다고 교정), 라이브 수정은 L46 블로그 전용 404(app/blog/not-found.tsx + [slug]/layout.tsx notFound)로 대체. reset vs retry 는 retry-lab 으로 확인 |
 | 6 | 이미지, 폰트, 메타데이터 | L47~62 | done | 2026-10-26 방어 통과 (Q1 용량 7.5MB→150kB, /_next/image 주소. Q2 fill+relative 는 relative 지워 보는 실험으로 확인). Q3 탭 제목은 L61 template+generateMetadata 로 대체. L54 Lighthouse, blur 는 건너뜀. L62 og 이미지 파일은 Claude 가 만들고 링고가 크기/방향 수정 |
-| 7 | 블로그 본체 | L63~80 | pending | |
+| 7 | 블로그 본체 | L63~80 | in_progress | |
 | 8 | 다크모드, 쿠키, 배포 | L81~95, L200~206 | pending | |
 | 9 | 가계부 UI 부품 | L96~106 | pending | |
 | 10 | 데이터 표시, 폼, 서버 액션 | L107~127 | pending | |

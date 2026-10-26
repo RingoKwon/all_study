@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  // L64: .md / .mdx 파일도 페이지로 쓸 수 있게
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   experimental: {
     agentFeedback: true,
   },
@@ -22,4 +25,7 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// L64: MDX 를 읽을 수 있게 nextConfig 를 한 번 감싸서 내보냄
+const withMDX = createMDX({});
+
+export default withMDX(nextConfig);
