@@ -8,7 +8,7 @@ export async function loadPost(slug: string) {
 
 export async function getPost(slug: string) {
   const source = await loadPost(slug);
-  return await compileMDX<{ title: string; description: string; date: string }>({
+  return await compileMDX<{ title: string; description: string; date: string; tags: string[] }>({
     source,
     options: { parseFrontmatter: true },
   });

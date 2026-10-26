@@ -309,8 +309,8 @@
 - [x] **L71** Blog Post List - Fetching Metadata of All Files (11분) [실습] 미션: /blog 페이지를 만들고 터미널(서버 콘솔)에 posts 배열을 console.log로 찍어보기. 오타 주의(endsWith, 대소문자). 확인: 브라우저가 아니라 npm run dev를 실행한 터미널에 `[{ slug: 'first', frontmatter: {...} }]` 출력. 커밋 #4d46d51
 - [x] **L72** Blog Post List - Links (9분) [실습] 미션: 글 목록 만들고 각 글이 /blog/slug 로 연결되게 하기. 날짜를 따옴표 없이 쓰면 어떤 에러가 나는지 한 번 확인 후 따옴표로 수정. 확인: http://localhost:3000/blog 에서 글 제목 링크와 날짜가 보이고 클릭하면 상세 페이지로 이동. 규칙: R5. 커밋 #a1a149f
 - [x] **L73** Section Introduction: Caching, Filtering, Sorting, Pagination (1분) [선택] 소개 영상
-- [ ] **L74** Performance Improvements and Refactoring - Using cache for Memoization (11분) [실습] 미션: getPost 안에 console.log('loading file')을 넣고 캐시 전에는 두 번, 캐시 후에는 한 번 찍히는지 터미널에서 확인. 확인: /blog/first 새로고침 시 터미널의 로그가 1줄만 나오면 성공. 규칙: R1, R3. 커밋 #bc1e581
-- [ ] **L75** Tags and Filtering Using Search Query Params (9분) [먼저] 미션: 태그 2개짜리 글로 /blog?tags=JavaScript 와 /blog?tags=Type 을 각각 열어 결과 비교. 태그 없이 열면 전체 표시. 확인: http://localhost:3000/blog?tags=JavaScript 에서 해당 글만 나오고 /blog?tags=Type 이면 아무것도 안 나옴. 규칙: R1. 커밋 #f1aa7c7
+- [x] **L74** Performance Improvements and Refactoring - Using cache for Memoization (11분) [실습] 미션: getPost 안에 console.log('loading file')을 넣고 캐시 전에는 두 번, 캐시 후에는 한 번 찍히는지 터미널에서 확인. 확인: /blog/first 새로고침 시 터미널의 로그가 1줄만 나오면 성공. 규칙: R1, R3. 커밋 #bc1e581
+- [x] **L75** Tags and Filtering Using Search Query Params (9분) [먼저] 미션: 태그 2개짜리 글로 /blog?tags=JavaScript 와 /blog?tags=Type 을 각각 열어 결과 비교. 태그 없이 열면 전체 표시. 확인: http://localhost:3000/blog?tags=JavaScript 에서 해당 글만 나오고 /blog?tags=Type 이면 아무것도 안 나옴. 규칙: R1. 커밋 #f1aa7c7
 - [ ] **L76** Sorting Posts - Using Query Params for State #1 (9분) [먼저] 미션: 추가 글 파일을 준비하고 date를 제각각 지정. 기본으로 최신 글이 위에 오는지 확인. 비교 함수의 a,b 순서를 바꿔 결과가 뒤집히는 것 확인. 확인: http://localhost:3000/blog 에서 날짜가 가장 최근 글이 맨 위. 커밋 #77bcf50
 - [ ] **L77** Change Sort Order - Using Query Params for State #2 (6분) [먼저] 미션: 정렬 토글 링크를 만들고 클릭 후 URL이 바뀌는 것을 확인. 그 URL을 새 탭에 붙여넣어도 같은 순서인지 확인. 확인: http://localhost:3000/blog?order=oldest 에서 오래된 글이 위에 나옴. 규칙: R1. 커밋 #55a3642
 - [ ] **L78** Adding Pagination - Using Query Params for State #3 (6분) [먼저] 미션: limit를 기본 3으로 두고 /blog?page=2, /blog?page=2&limit=2 를 직접 입력해보기. 확인: http://localhost:3000/blog?limit=2&page=2 에서 3~4번째 글이 나옴. 규칙: R1. 커밋 #f0f2721
@@ -552,6 +552,7 @@
 |---|---|---|---|---|
 | children (태그 사이 내용이 props.children으로 넘어감) | 2026-10-23 | 2 | L8에서 읽기 1회 이해 못함, L16 layout에서 "children이 뭔지 모름". 링고가 짠 `<Card>AA</Card>` 예시 + "태그 = 함수 호출 Card({children})" + C 구조체로 설명하니 통함. 2026-10-23 확인 문제 3개 정답(연속 1회) | 흔들림 |
 | JSX는 부모 하나로 감싸야 함 (`JSX expressions must have one parent element`) | 2026-10-23 | 2 | 1회: `{true && (<Card/><Card/>)}`, "JSX는 함수 호출, 자리 하나에 값 하나" + C `return a b;` 비유로 이해하고 div로 감싸 해결. 2회: 2026-10-25 `about/projects/page.tsx`의 return에 `<h1>`, `<h2>` 나란히. 힌트(전에 푼 것 떠올리기)만 줌. Fragment `<>` 는 아직 모름 | 흔들림 |
+| "use cache" 캐시 동작 (요청 안 vs 요청 사이, dev 재실행) | 2026-10-26 | 1 | L74: 터미널 " Cache " 로그 의미 이해 어려움. 메모장(memo 객체) JS 흉내로 같은 요청 안 4번 중 1번 읽기는 설명. 뒤로/앞으로 이동마다 진짜 읽기 1번씩 생기는 dev 동작은 원인 미확정. 링고가 "나중에 캐시 다시" 요청. 재방문 시 npm run build + npm start 로 프로덕션 동작 비교 실습 추천 | 다시 하기 |
 
 ---
 

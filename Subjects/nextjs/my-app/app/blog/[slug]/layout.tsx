@@ -12,7 +12,8 @@ export default async function BlogLayout(props: {
   params: Promise<{ slug: string }>;
 }) {
   const p = await props.params;
-  if (p.slug !== "first" && p.slug !== "second") {
+  const posts = await getPosts();
+  if (!posts.some((post) => post.slug === p.slug)) { 
     notFound();
   }
   return <>{props.children}</>;
