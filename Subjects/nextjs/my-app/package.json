@@ -15,12 +15,14 @@
     "@next/mdx": "^16.4.3",
     "@types/mdx": "^2.0.14",
     "next": "16.4.2",
+    "next-mdx-remote": "^6.0.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "react-error-boundary": "^6.1.6"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
+    "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

@@ -13,7 +13,8 @@ const nextConfig: NextConfig = {
     qualities: [50, 75, 100],
   },
   cacheComponents: true,
-  partialPrefetching: true,
+  // L72: 끔. 켜 두면 params 를 Suspense 밖에서 읽을 때마다 "instant" 에러가 남 (강의 범위 밖 최적화 기능)
+  // partialPrefetching: true,
   turbopack: {
     rules: {
       // Tailwind는 globals.css에만 적용 (*.css 전체에 걸면 .module.css가 일반 CSS로 바뀌어 styles.link가 비어 버림)
