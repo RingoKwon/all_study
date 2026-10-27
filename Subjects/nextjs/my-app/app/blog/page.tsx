@@ -17,9 +17,7 @@ export default function Blog(props: {
 }
 
 // ② 목록: 주소의 tags 를 꺼내서 글을 걸러 그림
-async function PostList(props: {
-  searchParams: Promise<{ tags?: string }>;
-}) {
+async function PostList(props: { searchParams: Promise<{ tags?: string }> }) {
   const { tags } = await props.searchParams;
   const allPosts = await getPosts();
 
@@ -27,6 +25,9 @@ async function PostList(props: {
   const posts = tags
     ? allPosts.filter((post) => post.frontmatter.tags.includes(tags))
     : allPosts;
+  const sorted = [...posts].sort((a, b) =>
+    b.frontmatter.date.localeCompare(a.frontmatter.date),
+  );
 
   return (
     <ul>
