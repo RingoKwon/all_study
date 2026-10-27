@@ -1,0 +1,15 @@
+.card {
+  display: flex;
+  padding: 16px;
+
+   
+  margin: 0 auto;
+}
+.card:hover {
+  background: #fff;
+  color: RED;
+}
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+}
