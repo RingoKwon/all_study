@@ -311,7 +311,7 @@
 - [x] **L73** Section Introduction: Caching, Filtering, Sorting, Pagination (1분) [선택] 소개 영상
 - [x] **L74** Performance Improvements and Refactoring - Using cache for Memoization (11분) [실습] 미션: getPost 안에 console.log('loading file')을 넣고 캐시 전에는 두 번, 캐시 후에는 한 번 찍히는지 터미널에서 확인. 확인: /blog/first 새로고침 시 터미널의 로그가 1줄만 나오면 성공. 규칙: R1, R3. 커밋 #bc1e581
 - [x] **L75** Tags and Filtering Using Search Query Params (9분) [먼저] 미션: 태그 2개짜리 글로 /blog?tags=JavaScript 와 /blog?tags=Type 을 각각 열어 결과 비교. 태그 없이 열면 전체 표시. 확인: http://localhost:3000/blog?tags=JavaScript 에서 해당 글만 나오고 /blog?tags=Type 이면 아무것도 안 나옴. 규칙: R1. 커밋 #f1aa7c7
-- [ ] **L76** Sorting Posts - Using Query Params for State #1 (9분) [먼저] 미션: 추가 글 파일을 준비하고 date를 제각각 지정. 기본으로 최신 글이 위에 오는지 확인. 비교 함수의 a,b 순서를 바꿔 결과가 뒤집히는 것 확인. 확인: http://localhost:3000/blog 에서 날짜가 가장 최근 글이 맨 위. 커밋 #77bcf50
+- [x] **L76** Sorting Posts - Using Query Params for State #1 (9분) [먼저] 미션: 추가 글 파일을 준비하고 date를 제각각 지정. 기본으로 최신 글이 위에 오는지 확인. 비교 함수의 a,b 순서를 바꿔 결과가 뒤집히는 것 확인. 확인: http://localhost:3000/blog 에서 날짜가 가장 최근 글이 맨 위. 커밋 #77bcf50
 - [ ] **L77** Change Sort Order - Using Query Params for State #2 (6분) [먼저] 미션: 정렬 토글 링크를 만들고 클릭 후 URL이 바뀌는 것을 확인. 그 URL을 새 탭에 붙여넣어도 같은 순서인지 확인. 확인: http://localhost:3000/blog?order=oldest 에서 오래된 글이 위에 나옴. 규칙: R1. 커밋 #55a3642
 - [ ] **L78** Adding Pagination - Using Query Params for State #3 (6분) [먼저] 미션: limit를 기본 3으로 두고 /blog?page=2, /blog?page=2&limit=2 를 직접 입력해보기. 확인: http://localhost:3000/blog?limit=2&page=2 에서 3~4번째 글이 나옴. 규칙: R1. 커밋 #f0f2721
 - [ ] **L79** Pagination Component - Pages #1 (9분) [실습] 미션: getPosts의 반환 형태를 바꾸고 에러 메시지를 따라 호출부를 모두 수정. limit=2로 설정해 번호가 3개 나오는지 확인. 확인: 글 6개, limit 3이면 번호 1, 2 / limit 2이면 1, 2, 3이 목록 아래에 나옴. 커밋 #7f2890c

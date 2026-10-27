@@ -31,7 +31,7 @@ async function PostList(props: { searchParams: Promise<{ tags?: string }> }) {
 
   return (
     <ul>
-      {posts.map((post) => (
+      {sorted.map((post) => (
         <li key={post.slug}>
           <div>---</div>
           <Link href={`/blog/${post.slug}`}>{post.frontmatter.title}</Link>
